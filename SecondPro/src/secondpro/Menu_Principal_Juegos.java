@@ -53,8 +53,8 @@ public class Menu_Principal_Juegos extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         btnSalir = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        nata = new javax.swing.JButton();
+        pregu = new javax.swing.JButton();
         REPORTE = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -76,22 +76,22 @@ public class Menu_Principal_Juegos extends javax.swing.JFrame {
             }
         });
 
-        jButton1.setBackground(java.awt.Color.gray);
-        jButton1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jButton1.setText("JUEGO NATACION");
-        jButton1.setToolTipText("");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        nata.setBackground(java.awt.Color.gray);
+        nata.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        nata.setText("JUEGO NATACION");
+        nata.setToolTipText("");
+        nata.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                nataActionPerformed(evt);
             }
         });
 
-        jButton2.setBackground(java.awt.Color.gray);
-        jButton2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jButton2.setText("JUEGO PREGUNTAS");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        pregu.setBackground(java.awt.Color.gray);
+        pregu.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        pregu.setText("JUEGO PREGUNTAS");
+        pregu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                preguActionPerformed(evt);
             }
         });
 
@@ -109,8 +109,8 @@ public class Menu_Principal_Juegos extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel2)
                             .addComponent(btnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton1)
-                            .addComponent(jButton2)))
+                            .addComponent(nata)
+                            .addComponent(pregu)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(176, 176, 176)
                         .addComponent(jLabel1))
@@ -127,9 +127,9 @@ public class Menu_Principal_Juegos extends javax.swing.JFrame {
                 .addGap(25, 25, 25)
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton1)
+                .addComponent(nata)
                 .addGap(18, 18, 18)
-                .addComponent(jButton2)
+                .addComponent(pregu)
                 .addGap(17, 17, 17)
                 .addComponent(btnSalir)
                 .addGap(27, 27, 27)
@@ -144,13 +144,15 @@ public class Menu_Principal_Juegos extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_btnSalirActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        REPORTE.setText("hola");//borrar
-    }//GEN-LAST:event_jButton1ActionPerformed
+    private void nataActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nataActionPerformed
+        MenuNata x = new MenuNata();
+        x.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_nataActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void preguActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_preguActionPerformed
         REPORTE.setText("bien");//borrar
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_preguActionPerformed
 
     /**
      * @param args the command line arguments
@@ -191,9 +193,9 @@ public class Menu_Principal_Juegos extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel REPORTE;
     private javax.swing.JButton btnSalir;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JButton nata;
+    private javax.swing.JButton pregu;
     // End of variables declaration//GEN-END:variables
 }
