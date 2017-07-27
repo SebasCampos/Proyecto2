@@ -5,6 +5,7 @@
  */
 package secondpro;
 
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import javax.swing.SpinnerNumberModel;
 
@@ -23,6 +24,7 @@ public class NataConfi extends javax.swing.JFrame {
         cantP.setMaximum(5);
         cantP.setMinimum(0);
         cP.setModel(cantP);
+        
     }
 
     /**
@@ -48,6 +50,7 @@ public class NataConfi extends javax.swing.JFrame {
         p4 = new javax.swing.JRadioButton();
         p3 = new javax.swing.JRadioButton();
         game = new javax.swing.JButton();
+        back = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -69,6 +72,13 @@ public class NataConfi extends javax.swing.JFrame {
         game.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 gameActionPerformed(evt);
+            }
+        });
+
+        back.setText("Volver");
+        back.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                backActionPerformed(evt);
             }
         });
 
@@ -95,13 +105,14 @@ public class NataConfi extends javax.swing.JFrame {
                             .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(78, 78, 78)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(p4)
                             .addComponent(p2)
                             .addComponent(p3)
                             .addComponent(p5)
-                            .addComponent(game)
-                            .addComponent(p1))))
+                            .addComponent(game, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(p1)
+                            .addComponent(back, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap(169, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -119,25 +130,27 @@ public class NataConfi extends javax.swing.JFrame {
                     .addComponent(p1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel4)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel5)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel6)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel7))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(p2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(p2))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(p3)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(p4)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(p5)))
+                        .addComponent(p5))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jLabel5)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel6)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel7)))
                 .addGap(45, 45, 45)
                 .addComponent(game)
-                .addGap(0, 73, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(back)
+                .addGap(0, 30, Short.MAX_VALUE))
         );
 
         pack();
@@ -146,36 +159,58 @@ public class NataConfi extends javax.swing.JFrame {
     private void gameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gameActionPerformed
         SpinnerNumberModel cantP = new SpinnerNumberModel();
         int cPlayer = (int) cP.getValue();
-        
+        ArrayList<String> nombres = new ArrayList<>();
+        nombres.add("Juan");
+        nombres.add("Kendall");
+        nombres.add("Keylor");
+        nombres.add("Carlos");
+        nombres.add("Luis");
+        ArrayList<String> participantes = new ArrayList<>();//lista que recibe la ventana para jugar
         try{
             int cont = 0;
 
             if (p1.isSelected() == true) {
                 cont++;
+                participantes.add(nombres.get(0));
             }
             if (p2.isSelected() == true) {
                 cont++;
+                participantes.add(nombres.get(1));
             }
             if (p3.isSelected() == true) {
                 cont++;
+                participantes.add(nombres.get(2));
             }
             if (p4.isSelected() == true) {
                 cont++;
+                participantes.add(nombres.get(3));
             }
             if (p5.isSelected() == true) {
                 cont++;
+                participantes.add(nombres.get(4));
             }
-
-            if (cont == cPlayer) {
-                //se llama el juego y revise como parametro la cantidad y el nombre de los maes
-                
-            }else{JOptionPane.showMessageDialog(rootPane,"El número de participantes no coincide");}
+            if(cont == 1){
+                JOptionPane.showMessageDialog(rootPane,"No se pude competir con uno solo participante");
+            }
+            else if (cont == cPlayer) {
+                //se llama el juego y revise como parametro la cantidad y el nombre de los maes   
+            } 
+            else if(cont == 0){
+                JOptionPane.showMessageDialog(rootPane,"No se puede competir sin participantes");
+            }   
+            else{JOptionPane.showMessageDialog(rootPane,"El número de participantes no coincide");}
             
         }
         catch(Exception e){
             JOptionPane.showMessageDialog(rootPane,"El número de participantes no coincide");
         }
     }//GEN-LAST:event_gameActionPerformed
+
+    private void backActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backActionPerformed
+        MenuNata o = new MenuNata();
+        o.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_backActionPerformed
 
     /**
      * @param args the command line arguments
@@ -213,6 +248,7 @@ public class NataConfi extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton back;
     private javax.swing.JSpinner cP;
     private javax.swing.JButton game;
     private javax.swing.JLabel jLabel1;

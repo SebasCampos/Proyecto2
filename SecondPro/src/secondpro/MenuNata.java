@@ -51,6 +51,11 @@ public class MenuNata extends javax.swing.JFrame {
         });
 
         out.setText("Salir");
+        out.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                outActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -92,8 +97,17 @@ public class MenuNata extends javax.swing.JFrame {
     }//GEN-LAST:event_playActionPerformed
 
     private void estadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_estadActionPerformed
-        // TODO add your handling code here:
+        EstadiMeni c = new EstadiMeni();
+        c.setVisible(true);
+        dispose();
+        
     }//GEN-LAST:event_estadActionPerformed
+
+    private void outActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_outActionPerformed
+        Menu_Principal_Juegos p = new  Menu_Principal_Juegos();
+        p.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_outActionPerformed
 
     /**
      * @param args the command line arguments
