@@ -151,7 +151,9 @@ public class Menu_Principal_Juegos extends javax.swing.JFrame {
     }//GEN-LAST:event_nataActionPerformed
 
     private void preguActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_preguActionPerformed
-        REPORTE.setText("bien");//borrar
+        MenuPreguntas u = new MenuPreguntas();
+        u.setVisible(true);
+        dispose();
     }//GEN-LAST:event_preguActionPerformed
 
     /**

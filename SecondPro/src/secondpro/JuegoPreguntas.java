@@ -5,6 +5,9 @@
  */
 package secondpro;
 
+import java.awt.Image;
+import javax.swing.ImageIcon;
+
 /**
  *
  * @author h
@@ -16,6 +19,9 @@ public class JuegoPreguntas extends javax.swing.JFrame {
      */
     public JuegoPreguntas() {
         initComponents();
+//        ImageIcon tablero = new ImageIcon(getClass().getResource("/imagenes/TableroPreguntas.jpg"));
+//        ImageIcon montar = new ImageIcon(tablero.getImage().getScaledInstance(tab.getWidth(),tab.getHeight(),Image.SCALE_DEFAULT));
+        
     }
 
     /**
@@ -33,11 +39,11 @@ public class JuegoPreguntas extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGap(0, 676, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGap(0, 583, Short.MAX_VALUE)
         );
 
         pack();
