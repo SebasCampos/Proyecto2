@@ -193,6 +193,7 @@ public class NataConfi extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(rootPane,"No se pude competir con uno solo participante");
             }
             else if (cont == cPlayer) {
+                carrera_natacion carrera = new carrera_natacion(); 
                 //se llama el juego y revise como parametro la cantidad y el nombre de los maes   
             } 
             else if(cont == 0){
