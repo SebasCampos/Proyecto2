@@ -6,6 +6,7 @@
 package secondpro;
 
 import java.awt.Image;
+import java.awt.event.KeyEvent;
 import javax.swing.ImageIcon;
 
 /**
@@ -19,8 +20,9 @@ public class JuegoPreguntas extends javax.swing.JFrame {
      */
     public JuegoPreguntas() {
         initComponents();
-//        ImageIcon tablero = new ImageIcon(getClass().getResource("/imagenes/TableroPreguntas.jpg"));
-//        ImageIcon montar = new ImageIcon(tablero.getImage().getScaledInstance(tab.getWidth(),tab.getHeight(),Image.SCALE_DEFAULT));
+        ImageIcon tablero = new ImageIcon(getClass().getResource("/imagenes/TableroPreguntas.jpg"));
+        ImageIcon montar = new ImageIcon(tablero.getImage().getScaledInstance(tabJuego.getWidth(),tabJuego.getHeight(),Image.SCALE_DEFAULT));
+        
         
     }
 
@@ -33,21 +35,97 @@ public class JuegoPreguntas extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        tabJuego = new javax.swing.JPanel();
+        ini = new javax.swing.JButton();
+        exi = new javax.swing.JButton();
+        personaje = new javax.swing.JLabel();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        tabJuego.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        ini.setText("Empezar");
+        ini.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                iniActionPerformed(evt);
+            }
+        });
+
+        exi.setText("Salir");
+        exi.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                exiActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout tabJuegoLayout = new javax.swing.GroupLayout(tabJuego);
+        tabJuego.setLayout(tabJuegoLayout);
+        tabJuegoLayout.setHorizontalGroup(
+            tabJuegoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(tabJuegoLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(ini)
+                .addGap(69, 69, 69)
+                .addComponent(exi)
+                .addContainerGap(528, Short.MAX_VALUE))
+        );
+        tabJuegoLayout.setVerticalGroup(
+            tabJuegoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, tabJuegoLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(tabJuegoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(ini)
+                    .addComponent(exi))
+                .addContainerGap())
+        );
+
+        personaje.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                personajeKeyPressed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 676, Short.MAX_VALUE)
+            .addComponent(tabJuego, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(29, 29, 29)
+                .addComponent(personaje, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 583, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(personaje, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 371, Short.MAX_VALUE)
+                .addComponent(tabJuego, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(44, 44, 44))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void iniActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_iniActionPerformed
+        //Aquí se debe de iniciar el resto de metodos del juego
+        ImageIcon user = new ImageIcon(getClass().getResource("/imagenes/User.jpg"));
+        ImageIcon icono = new ImageIcon(user.getImage().getScaledInstance(personaje.getWidth(), personaje.getHeight(), Image.SCALE_DEFAULT));
+        personaje.setIcon(icono);
+        
+    }//GEN-LAST:event_iniActionPerformed
+
+    private void exiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exiActionPerformed
+        MenuPreguntas v = new MenuPreguntas();
+        v.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_exiActionPerformed
+
+    private void personajeKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_personajeKeyPressed
+        
+        
+    }//GEN-LAST:event_personajeKeyPressed
 
     /**
      * @param args the command line arguments
@@ -83,7 +161,19 @@ public class JuegoPreguntas extends javax.swing.JFrame {
             }
         });
     }
+    private Image img;
+
+    
+    public void ImagePanel(Image img){
+        this.img = img;
+    }
+    
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton exi;
+    private javax.swing.JButton ini;
+    private javax.swing.JLabel personaje;
+    private javax.swing.JPanel tabJuego;
     // End of variables declaration//GEN-END:variables
 }
