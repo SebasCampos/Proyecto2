@@ -1,6 +1,8 @@
 
 package secondpro;
 
+import java.awt.Graphics;
+import javax.swing.ImageIcon;
 import javax.swing.JPanel;
 
 /**
@@ -19,5 +21,12 @@ public class MovimientoPreguntas {
         this.tablero = miTab;
     }
     
+    public void dibujar(Graphics g, int xi, int yi, String direccion){
+        this.x = xi;
+        this.y = yi;
+        ImageIcon user = new ImageIcon(direccion);
+        
+    }
+
     
 }

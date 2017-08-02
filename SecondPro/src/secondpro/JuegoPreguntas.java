@@ -8,6 +8,7 @@ package secondpro;
 import java.awt.Image;
 import java.awt.event.KeyEvent;
 import javax.swing.ImageIcon;
+import javax.swing.JLabel;
 
 /**
  *
@@ -35,6 +36,7 @@ public class JuegoPreguntas extends javax.swing.JFrame {
     private void initComponents() {
 
         tabGame = new javax.swing.JPanel();
+        play = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -42,33 +44,76 @@ public class JuegoPreguntas extends javax.swing.JFrame {
         tabGame.setLayout(tabGameLayout);
         tabGameLayout.setHorizontalGroup(
             tabGameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 705, Short.MAX_VALUE)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
         tabGameLayout.setVerticalGroup(
             tabGameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 442, Short.MAX_VALUE)
         );
 
+        play.setText("Jugar");
+        play.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                playActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(20, 20, 20)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap()
                 .addComponent(tabGame, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
+            .addGroup(layout.createSequentialGroup()
+                .addGap(34, 34, 34)
+                .addComponent(play)
+                .addContainerGap(642, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(54, 54, 54)
+                .addContainerGap()
                 .addComponent(tabGame, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                .addGap(18, 18, 18)
+                .addComponent(play)
+                .addGap(13, 13, 13))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void playActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_playActionPerformed
+        PregGraf y = new PregGraf();
+        mostrar(y.getInter());
+        
+        
+        
+    }//GEN-LAST:event_playActionPerformed
+    
+    //Allows to show the matrix with the graphic interface
+    public void mostrar(JLabel tab [][]){
+        int x = 0;
+        int y = 0;
+        for (int i = 0; i < 8; i++) {
+            y = y+3;
+            for (int j = 0; j < 5; j++) {
+                tab[i][j].setVisible(true);
+                tab[i][j].setBounds(x, y, 40, 40);
+                tabGame.add(tab[i][j]);
+                
+                
+                x = x+3;
+                
+                
+            }
+            
+        }
+    
+  
+    }
+    
     /**
      * @param args the command line arguments
      */
@@ -103,16 +148,12 @@ public class JuegoPreguntas extends javax.swing.JFrame {
             }
         });
     }
-    private Image img;
-
     
-    public void ImagePanel(Image img){
-        this.img = img;
-    }
     
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton play;
     private javax.swing.JPanel tabGame;
     // End of variables declaration//GEN-END:variables
 }
