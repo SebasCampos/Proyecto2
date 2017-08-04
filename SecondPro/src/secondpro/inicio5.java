@@ -12,34 +12,34 @@ import javax.swing.JLabel;
 
 /**
  *
- * @author Kendall
+ * @author KENDALL
  */
-public class inicio3 extends Thread{
-     int posicionInicix, limitepista; 
-   JLabel nadador3;
-    public inicio3(int posicionInicix, int limitepista,JLabel nadador){
+public class inicio5 extends Thread{
+  int posicionInicix, limitepista; 
+   JLabel nadador5;
+    public inicio5(int posicionInicix, int limitepista,JLabel nadador){
         this.posicionInicix = posicionInicix;
         this.limitepista = limitepista;
-        this.nadador3 = nadador;
+        this.nadador5 = nadador;
     }
     
     
     @Override
     public void run(){
         Random velocidad = new Random();
-        int ritmoNa3 = 0;
-        int ritmo3 = velocidad.nextInt(70);// genera la velocidad del nadador
+        int ritmoNa5 = 0;
+        int ritmo5 = velocidad.nextInt(70);// genera la velocidad del nadador
         for(int i = limitepista-150; i > 0; i--){// limite en la cual se tiene que detener el nadador
-            ritmoNa3 = ritmo3;
+            ritmoNa5 = ritmo5;
             
-            nadador3.setBounds(posicionInicix, i, 73, 100);// posicion de inicio del nadador
+            nadador5.setBounds(posicionInicix, i, 73, 100);// posicion de inicio del nadador
             try{
-                sleep(ritmoNa3);//velocidad de nadador
+                sleep(ritmoNa5);//velocidad de nadador
             }catch(Exception e){
                 
             }
         }
-        System.out.println("participante: "+ "nadador 3 la velocidad es de: " + ritmoNa3);
+        System.out.println("participante: "+ "nadador 5 la velocidad es de: " + ritmoNa5);
         yield();//sirve para que LOS HILOS no se ejecuten al mismo tiempo
-    }
+    }   
 }

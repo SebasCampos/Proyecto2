@@ -18,13 +18,18 @@ public class NataConfi extends javax.swing.JFrame {
     /**
      * Creates new form NataConfi
      */
+    int cPlayer = 0;
     public NataConfi() {
+        this.cPlayer = cPlayer;
         initComponents();
         SpinnerNumberModel cantP = new SpinnerNumberModel();
         cantP.setMaximum(5);
         cantP.setMinimum(0);
         cP.setModel(cantP);
         
+    }
+    public int getCantidad(){
+        return this.cPlayer;// retorna el valor de la variable la que indica cantidad nadadores
     }
 
     /**
@@ -158,7 +163,7 @@ public class NataConfi extends javax.swing.JFrame {
 
     private void gameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gameActionPerformed
         SpinnerNumberModel cantP = new SpinnerNumberModel();
-        int cPlayer = (int) cP.getValue();
+        cPlayer = (int) cP.getValue();
         ArrayList<String> nombres = new ArrayList<>();
         nombres.add("Juan");
         nombres.add("Kendall");
@@ -189,15 +194,23 @@ public class NataConfi extends javax.swing.JFrame {
                 cont++;
                 participantes.add(nombres.get(4));
             }
-            if(cont == 1){
+            if(cont == 1){ 
+                picina pista = new picina();
+                pista.setVisible(true);
+                this.dispose();
                 JOptionPane.showMessageDialog(rootPane,"No se pude competir con uno solo participante");
+                // Apartir de qui no me ingresa lo que hace es brincar a el mesaje numero participantes 
+                           //no concide.
             }
             else if (cont == cPlayer) {
-                carrera_natacion carrera = new carrera_natacion(); 
+                picina pista = new picina();
+                pista.setVisible(true);
+                this.dispose();
+ 
                 //se llama el juego y revise como parametro la cantidad y el nombre de los maes   
             } 
             else if(cont == 0){
-                JOptionPane.showMessageDialog(rootPane,"No se puede competir sin participantes");
+               JOptionPane.showMessageDialog(rootPane,"No se puede competir sin participantes");
             }   
             else{JOptionPane.showMessageDialog(rootPane,"El número de participantes no coincide");}
             
