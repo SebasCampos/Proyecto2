@@ -24,15 +24,14 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="tabGame" min="-2" max="-2" attributes="0"/>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
-                      <Component id="play" min="-2" max="-2" attributes="0"/>
-                  </Group>
-              </Group>
-              <EmptySpace max="32767" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="tab" max="32767" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+          </Group>
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="54" max="-2" attributes="0"/>
+              <Component id="play" min="-2" max="-2" attributes="0"/>
+              <EmptySpace pref="609" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -40,268 +39,15 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="tabGame" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
+              <Component id="tab" min="-2" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="play" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="126" max="32767" attributes="0"/>
+              <EmptySpace pref="95" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Container class="javax.swing.JPanel" name="tabGame">
-
-      <Layout>
-        <DimensionLayout dim="0">
-          <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" attributes="0">
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <Component id="l17" min="-2" pref="77" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="l18" min="-2" pref="77" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="l19" min="-2" pref="77" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="l20" min="-2" pref="77" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="l21" min="-2" pref="77" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="l22" min="-2" pref="77" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="l23" min="-2" pref="77" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="l24" min="-2" pref="77" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <Component id="l25" min="-2" pref="77" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="l26" min="-2" pref="77" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="l27" min="-2" pref="77" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="l28" min="-2" pref="77" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="l29" min="-2" pref="77" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="l30" min="-2" pref="77" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="l31" min="-2" pref="77" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="l32" min="-2" pref="77" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <Component id="l33" min="-2" pref="77" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="l34" min="-2" pref="77" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="l35" min="-2" pref="77" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="l36" min="-2" pref="77" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="l37" min="-2" pref="77" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="l38" min="-2" pref="77" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="l39" min="-2" pref="77" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="l40" min="-2" pref="77" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" attributes="0">
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Component id="l9" min="-2" pref="77" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="l10" min="-2" pref="77" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="l11" min="-2" pref="77" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="l12" min="-2" pref="77" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Component id="l1" min="-2" pref="77" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="l2" min="-2" pref="77" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="l3" min="-2" pref="77" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="l4" min="-2" pref="77" max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" attributes="0">
-                                  <Component id="l5" min="-2" pref="77" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="l6" min="-2" pref="77" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="l7" min="-2" pref="77" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="l8" min="-2" pref="77" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" attributes="0">
-                                  <Component id="l13" min="-2" pref="77" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="l14" min="-2" pref="77" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="l15" min="-2" pref="77" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="l16" min="-2" pref="77" max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
-                      </Group>
-                  </Group>
-                  <EmptySpace max="32767" attributes="0"/>
-              </Group>
-          </Group>
-        </DimensionLayout>
-        <DimensionLayout dim="1">
-          <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="l1" alignment="3" min="-2" pref="74" max="-2" attributes="0"/>
-                      <Component id="l2" alignment="3" min="-2" pref="74" max="-2" attributes="0"/>
-                      <Component id="l3" alignment="3" min="-2" pref="74" max="-2" attributes="0"/>
-                      <Component id="l4" alignment="3" min="-2" pref="74" max="-2" attributes="0"/>
-                      <Component id="l5" alignment="3" min="-2" pref="74" max="-2" attributes="0"/>
-                      <Component id="l6" alignment="3" min="-2" pref="74" max="-2" attributes="0"/>
-                      <Component id="l7" alignment="3" min="-2" pref="74" max="-2" attributes="0"/>
-                      <Component id="l8" alignment="3" min="-2" pref="74" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="l9" alignment="3" min="-2" pref="74" max="-2" attributes="0"/>
-                      <Component id="l10" alignment="3" min="-2" pref="74" max="-2" attributes="0"/>
-                      <Component id="l11" alignment="3" min="-2" pref="74" max="-2" attributes="0"/>
-                      <Component id="l12" alignment="3" min="-2" pref="74" max="-2" attributes="0"/>
-                      <Component id="l13" alignment="3" min="-2" pref="74" max="-2" attributes="0"/>
-                      <Component id="l14" alignment="3" min="-2" pref="74" max="-2" attributes="0"/>
-                      <Component id="l15" alignment="3" min="-2" pref="74" max="-2" attributes="0"/>
-                      <Component id="l16" alignment="3" min="-2" pref="74" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="l17" alignment="3" min="-2" pref="74" max="-2" attributes="0"/>
-                      <Component id="l18" alignment="3" min="-2" pref="74" max="-2" attributes="0"/>
-                      <Component id="l19" alignment="3" min="-2" pref="74" max="-2" attributes="0"/>
-                      <Component id="l20" alignment="3" min="-2" pref="74" max="-2" attributes="0"/>
-                      <Component id="l21" alignment="3" min="-2" pref="74" max="-2" attributes="0"/>
-                      <Component id="l22" alignment="3" min="-2" pref="74" max="-2" attributes="0"/>
-                      <Component id="l23" alignment="3" min="-2" pref="74" max="-2" attributes="0"/>
-                      <Component id="l24" alignment="3" min="-2" pref="74" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="l25" alignment="3" min="-2" pref="74" max="-2" attributes="0"/>
-                      <Component id="l26" alignment="3" min="-2" pref="74" max="-2" attributes="0"/>
-                      <Component id="l27" alignment="3" min="-2" pref="74" max="-2" attributes="0"/>
-                      <Component id="l28" alignment="3" min="-2" pref="74" max="-2" attributes="0"/>
-                      <Component id="l29" alignment="3" min="-2" pref="74" max="-2" attributes="0"/>
-                      <Component id="l30" alignment="3" min="-2" pref="74" max="-2" attributes="0"/>
-                      <Component id="l31" alignment="3" min="-2" pref="74" max="-2" attributes="0"/>
-                      <Component id="l32" alignment="3" min="-2" pref="74" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="l33" alignment="3" min="-2" pref="74" max="-2" attributes="0"/>
-                      <Component id="l34" alignment="3" min="-2" pref="74" max="-2" attributes="0"/>
-                      <Component id="l35" alignment="3" min="-2" pref="74" max="-2" attributes="0"/>
-                      <Component id="l36" alignment="3" min="-2" pref="74" max="-2" attributes="0"/>
-                      <Component id="l37" alignment="3" min="-2" pref="74" max="-2" attributes="0"/>
-                      <Component id="l38" alignment="3" min="-2" pref="74" max="-2" attributes="0"/>
-                      <Component id="l39" alignment="3" min="-2" pref="74" max="-2" attributes="0"/>
-                      <Component id="l40" alignment="3" min="-2" pref="74" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace max="32767" attributes="0"/>
-              </Group>
-          </Group>
-        </DimensionLayout>
-      </Layout>
-      <SubComponents>
-        <Component class="javax.swing.JLabel" name="l9">
-        </Component>
-        <Component class="javax.swing.JLabel" name="l1">
-        </Component>
-        <Component class="javax.swing.JLabel" name="l17">
-        </Component>
-        <Component class="javax.swing.JLabel" name="l2">
-        </Component>
-        <Component class="javax.swing.JLabel" name="l25">
-        </Component>
-        <Component class="javax.swing.JLabel" name="l33">
-        </Component>
-        <Component class="javax.swing.JLabel" name="l3">
-        </Component>
-        <Component class="javax.swing.JLabel" name="l5">
-        </Component>
-        <Component class="javax.swing.JLabel" name="l4">
-        </Component>
-        <Component class="javax.swing.JLabel" name="l6">
-        </Component>
-        <Component class="javax.swing.JLabel" name="l7">
-        </Component>
-        <Component class="javax.swing.JLabel" name="l8">
-        </Component>
-        <Component class="javax.swing.JLabel" name="l10">
-        </Component>
-        <Component class="javax.swing.JLabel" name="l11">
-        </Component>
-        <Component class="javax.swing.JLabel" name="l12">
-        </Component>
-        <Component class="javax.swing.JLabel" name="l13">
-        </Component>
-        <Component class="javax.swing.JLabel" name="l14">
-        </Component>
-        <Component class="javax.swing.JLabel" name="l15">
-        </Component>
-        <Component class="javax.swing.JLabel" name="l16">
-        </Component>
-        <Component class="javax.swing.JLabel" name="l18">
-        </Component>
-        <Component class="javax.swing.JLabel" name="l19">
-        </Component>
-        <Component class="javax.swing.JLabel" name="l20">
-        </Component>
-        <Component class="javax.swing.JLabel" name="l21">
-        </Component>
-        <Component class="javax.swing.JLabel" name="l22">
-        </Component>
-        <Component class="javax.swing.JLabel" name="l23">
-        </Component>
-        <Component class="javax.swing.JLabel" name="l24">
-        </Component>
-        <Component class="javax.swing.JLabel" name="l26">
-        </Component>
-        <Component class="javax.swing.JLabel" name="l27">
-        </Component>
-        <Component class="javax.swing.JLabel" name="l28">
-        </Component>
-        <Component class="javax.swing.JLabel" name="l29">
-        </Component>
-        <Component class="javax.swing.JLabel" name="l30">
-        </Component>
-        <Component class="javax.swing.JLabel" name="l31">
-        </Component>
-        <Component class="javax.swing.JLabel" name="l32">
-        </Component>
-        <Component class="javax.swing.JLabel" name="l34">
-        </Component>
-        <Component class="javax.swing.JLabel" name="l35">
-        </Component>
-        <Component class="javax.swing.JLabel" name="l36">
-        </Component>
-        <Component class="javax.swing.JLabel" name="l37">
-        </Component>
-        <Component class="javax.swing.JLabel" name="l38">
-        </Component>
-        <Component class="javax.swing.JLabel" name="l39">
-        </Component>
-        <Component class="javax.swing.JLabel" name="l40">
-        </Component>
-      </SubComponents>
-    </Container>
     <Component class="javax.swing.JButton" name="play">
       <Properties>
         <Property name="text" type="java.lang.String" value="Jugar"/>
@@ -310,5 +56,20 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="playActionPerformed"/>
       </Events>
     </Component>
+    <Container class="javax.swing.JPanel" name="tab">
+
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <EmptySpace min="0" pref="461" max="32767" attributes="0"/>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+    </Container>
   </SubComponents>
 </Form>
