@@ -89,12 +89,30 @@ public class JuegoPreguntas extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
     //Shows the matrix of labels on tha panel and also creates the logic matrix
     private void playActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_playActionPerformed
+        //Falta realizar metodo de la matriz logica
+        int x =(int) (Math.random() * 5) + 0;
+        int y =(int) (Math.random() * 8) + 0;
+        logic[x][y]= "$";
+        logic[4][7] = "1";
         for (int i = 0; i < 5; i++) {
             for (int j = 0; j < 8; j++) {
-                logic[i][j] = "$";
+                if(logic[i][j] == null){
+                    logic[i][j] = "_";
+            }}
+        }
+        int conta = 0;
+        while(conta < 10){
+            int alex =(int) (Math.random() * 5) + 0;
+            int aley =(int) (Math.random() * 8) + 0;
+            if(logic[alex][aley].equals("_")){
+                logic[alex][aley]= "*";
+                conta++;
             }
+             
             
         }
+            
+        
         mostrar(etiq,logic);
     }//GEN-LAST:event_playActionPerformed
     
@@ -108,11 +126,11 @@ public class JuegoPreguntas extends javax.swing.JFrame {
         int  y = 75;
         Border border = BorderFactory.createLineBorder(Color.black, 1);
         ImageIcon user = new ImageIcon(this.getClass().getResource("/imagenes/User.jpg"));
+        
         etiquetas[0][0] = new JLabel();
         etiquetas[0][0].setBounds(x, y, 75, 75);
         etiquetas[0][0].setIcon(user);
         etiquetas[0][0].setBorder(border);
-        
         tab.add(etiquetas[0][0]);
         for (int i = 0; i < 5; i++) {
             for (int j = 0; j < 8; j++) {
@@ -134,7 +152,7 @@ public class JuegoPreguntas extends javax.swing.JFrame {
                    etiquetas[i][j].setBorder(border);
                    
                    tab.add(etiquetas[i][j]);
-                }else{
+                }else if(logica[i][j].equals("$")){
                     ImageIcon obsta = new ImageIcon(this.getClass().getResource("/imagenes/como.jpg"));
                     etiquetas[i][j] = new JLabel();
                    etiquetas[i][j].setBounds(x, y, 75, 75);
@@ -142,6 +160,14 @@ public class JuegoPreguntas extends javax.swing.JFrame {
                    etiquetas[i][j].setBorder(border);
                    
                    tab.add(etiquetas[i][j]);                    
+                }
+                else{
+                    ImageIcon meta = new ImageIcon(this.getClass().getResource("/imagenes/meta.jpg"));
+                    etiquetas[4][7] = new JLabel();
+                    etiquetas[4][7].setBounds(x, y, 75, 75);
+                    etiquetas[4][7].setIcon(meta);
+                    etiquetas[4][7].setBorder(border);
+                    tab.add(etiquetas[4][7]);
                 }
                 x= x+75;
             }
@@ -151,6 +177,8 @@ public class JuegoPreguntas extends javax.swing.JFrame {
         
     }
     
+    
+    //Creates a matrix of labels
     public void graf(){
         for (int i = 0; i < 8; i++) {
             for (int j = 0; j < 5; j++) {
