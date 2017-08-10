@@ -145,6 +145,7 @@ public class Comodin extends javax.swing.JFrame {
 
     private void checkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkActionPerformed
         if(correcto(corro())){
+            // cambiar
             System.out.println("Gano");
             t.stop();
         }

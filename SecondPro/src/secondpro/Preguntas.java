@@ -9,6 +9,7 @@ import java.awt.Color;
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.border.Border;
 
 /**
@@ -52,11 +53,11 @@ public class Preguntas extends javax.swing.JFrame {
         tab.setLayout(tabLayout);
         tabLayout.setHorizontalGroup(
             tabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 720, Short.MAX_VALUE)
+            .addGap(0, 700, Short.MAX_VALUE)
         );
         tabLayout.setVerticalGroup(
             tabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 476, Short.MAX_VALUE)
+            .addGap(0, 512, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -66,21 +67,57 @@ public class Preguntas extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(tab, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                .addGap(30, 30, 30))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(tab, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(60, Short.MAX_VALUE))
+                .addComponent(tab, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(24, 24, 24))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void formKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_formKeyPressed
-        System.out.println(evt.getKeyCode());
+        PregLogica x = new PregLogica();
+        
+        if(evt.getKeyCode()== 39){
+            if(x.derecha(logic)){
+                
+                System.out.println("si");
+            }
+            else{
+                System.out.println("no");
+            }
+        }else if(evt.getKeyCode() == 37){
+            if(x.izquierda(logic)){
+                System.out.println("si");
+            }
+            else{
+                System.out.println("no");
+            }
+        }
+        else if(evt.getKeyCode()== 38){
+            if(x.arriba(logic)){
+                System.out.println("si");
+            }
+            else{
+                System.out.println("no");
+            }
+        }
+        else if(evt.getKeyCode()== 40){
+            if(x.abajo(logic)){
+                System.out.println("si");
+            }
+            else{
+                System.out.println("no");
+            }
+        }
+        else{
+            JOptionPane.showMessageDialog(rootPane,"Tecla invalida");
+        }
     }//GEN-LAST:event_formKeyPressed
 
     public void show1(){
@@ -105,6 +142,7 @@ public class Preguntas extends javax.swing.JFrame {
              
             
         }
+        logic[0][0] = "u";
             
         
         mostrar(etiq,logic);
