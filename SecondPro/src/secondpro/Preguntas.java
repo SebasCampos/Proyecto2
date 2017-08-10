@@ -6,9 +6,6 @@
 package secondpro;
 
 import java.awt.Color;
-import java.awt.Image;
-import java.awt.event.KeyEvent;
-import java.util.ArrayList;
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
@@ -18,16 +15,19 @@ import javax.swing.border.Border;
  *
  * @author h
  */
-public class JuegoPreguntas extends javax.swing.JFrame {
+public class Preguntas extends javax.swing.JFrame {
 
     /**
-     * Creates new form JuegoPreguntas
+     * Creates new form Preguntas
      */
-    public JuegoPreguntas() {
+        
+    JLabel eti = new JLabel();
+    JLabel [][] etiq = new JLabel[5][8];
+    String [][] logic = new String[5][8];
+    public Preguntas() {
         initComponents();
+        show1();
        
-        
-        
     }
 
     /**
@@ -39,15 +39,12 @@ public class JuegoPreguntas extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        play = new javax.swing.JButton();
         tab = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        play.setText("Jugar");
-        play.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                playActionPerformed(evt);
+        addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                formKeyPressed(evt);
             }
         });
 
@@ -55,11 +52,11 @@ public class JuegoPreguntas extends javax.swing.JFrame {
         tab.setLayout(tabLayout);
         tabLayout.setHorizontalGroup(
             tabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGap(0, 720, Short.MAX_VALUE)
         );
         tabLayout.setVerticalGroup(
             tabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 461, Short.MAX_VALUE)
+            .addGap(0, 476, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -70,26 +67,23 @@ public class JuegoPreguntas extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(tab, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
-            .addGroup(layout.createSequentialGroup()
-                .addGap(54, 54, 54)
-                .addComponent(play)
-                .addContainerGap(609, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(tab, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(play)
-                .addContainerGap(95, Short.MAX_VALUE))
+                .addContainerGap(60, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-    //Shows the matrix of labels on tha panel and also creates the logic matrix
-    private void playActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_playActionPerformed
-        //Falta realizar metodo de la matriz logica
+
+    private void formKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_formKeyPressed
+        System.out.println(evt.getKeyCode());
+    }//GEN-LAST:event_formKeyPressed
+
+    public void show1(){
         int x =(int) (Math.random() * 5) + 0;
         int y =(int) (Math.random() * 8) + 0;
         logic[x][y]= "$";
@@ -114,13 +108,15 @@ public class JuegoPreguntas extends javax.swing.JFrame {
             
         
         mostrar(etiq,logic);
-    }//GEN-LAST:event_playActionPerformed
     
-    //Matrix
-     JLabel eti = new JLabel();
-    JLabel [][] etiq = new JLabel[5][8];
-    String [][] logic = new String[5][8];
-    //Allows to show the matrix with the graphic interface
+    
+    }
+     
+    
+    
+    
+
+     //Allows to show the matrix with the graphic interface
     public void mostrar(JLabel[][] etiquetas,String[][]logica){
         int  x = 75;
         int  y = 75;
@@ -174,19 +170,15 @@ public class JuegoPreguntas extends javax.swing.JFrame {
             x = 75;
             y = y+75;
         }
-        
+//        tab.setVisible(false);
+//        tab.setVisible(true);
     }
     
     
-    //Creates a matrix of labels
-    public void graf(){
-        for (int i = 0; i < 8; i++) {
-            for (int j = 0; j < 5; j++) {
-                etiq[i][j] = eti;
-            }   
-        }
-    }
-       
+    
+    
+    
+
     /**
      * @param args the command line arguments
      */
@@ -204,28 +196,25 @@ public class JuegoPreguntas extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(JuegoPreguntas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Preguntas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(JuegoPreguntas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Preguntas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(JuegoPreguntas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Preguntas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(JuegoPreguntas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Preguntas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new JuegoPreguntas().setVisible(true);
+                new Preguntas().setVisible(true);
             }
         });
     }
-   
-    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton play;
     private javax.swing.JPanel tab;
     // End of variables declaration//GEN-END:variables
 }
