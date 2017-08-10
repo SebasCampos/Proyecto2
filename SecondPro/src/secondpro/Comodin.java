@@ -5,8 +5,12 @@
  */
 package secondpro;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import javax.swing.SpinnerNumberModel;
+import javax.swing.SwingConstants;
+import javax.swing.Timer;
 
 /**
  *
@@ -17,6 +21,9 @@ public class Comodin extends javax.swing.JFrame {
     /**
      * Creates new form Comodin
      */
+
+    private Timer t;
+    private int count = 0;
     int nume1 = 0;
     int nume2 = 0;
     int nume3 = 0;
@@ -55,11 +62,14 @@ public class Comodin extends javax.swing.JFrame {
         num3 = new javax.swing.JSpinner();
         check = new javax.swing.JButton();
         start = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        m_tiempo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jLabel1.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel1.setFont(new java.awt.Font("Vani", 0, 24)); // NOI18N
         jLabel1.setText("Adivina los números");
-        jLabel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         check.setText("Probar");
         check.addActionListener(new java.awt.event.ActionListener() {
@@ -75,6 +85,12 @@ public class Comodin extends javax.swing.JFrame {
             }
         });
 
+        jLabel2.setFont(new java.awt.Font("Vani", 0, 18)); // NOI18N
+        jLabel2.setText("Tiempo");
+
+        m_tiempo.setBackground(new java.awt.Color(255, 255, 255));
+        m_tiempo.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -82,38 +98,46 @@ public class Comodin extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(216, 216, 216)
-                        .addComponent(start))
+                        .addGap(133, 133, 133)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLabel1)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(num1)
+                                .addGap(35, 35, 35)
+                                .addComponent(num2, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(35, 35, 35)
+                                .addComponent(num3, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(198, 198, 198)
-                        .addComponent(jLabel1))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(142, 142, 142)
-                        .addComponent(num1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(44, 44, 44)
+                        .addGap(208, 208, 208)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(num2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(46, 46, 46)
-                                .addComponent(num3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(check))))
-                .addContainerGap(176, Short.MAX_VALUE))
+                            .addComponent(jLabel2)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(start)
+                                .addComponent(check))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(193, 193, 193)
+                        .addComponent(m_tiempo, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(144, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(75, 75, 75)
-                .addComponent(start)
-                .addGap(26, 26, 26)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(12, 12, 12)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(num1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(num2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(num3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(58, 58, 58)
+                    .addComponent(num3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(num2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(27, 27, 27)
                 .addComponent(check)
-                .addContainerGap(220, Short.MAX_VALUE))
+                .addGap(90, 90, 90)
+                .addComponent(start)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(m_tiempo, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(140, Short.MAX_VALUE))
         );
 
         pack();
@@ -122,39 +146,52 @@ public class Comodin extends javax.swing.JFrame {
     private void checkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkActionPerformed
         if(correcto(corro())){
             System.out.println("Gano");
-            //Se cambia a interfaz y se termina el juego
+            t.stop();
         }
         else{
             System.out.println("incorrecto");
         }
-       
+
     }//GEN-LAST:event_checkActionPerformed
 
     private void startActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_startActionPerformed
-        // Debe iniciar el cronometro y crear el random
+        t = new Timer(1000, new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                count ++;
+                if(count == 60){
+                    t.stop();
+                }
+                else{
+                m_tiempo.setHorizontalAlignment(SwingConstants.CENTER);
+                m_tiempo.setText(count+"");
+            }}
+        });
+        t.start();
+        
         for (int i = 0; i != 3; i++) {
             int ale  = (int) (Math.random()*10)+0;
             code.add(ale);
         }
         System.out.println(code);
+        start.setEnabled(false);
     }//GEN-LAST:event_startActionPerformed
     public int corro(){
         nume1 = (int) num1.getValue();
         nume2 = (int) num2.getValue();
         nume3 = (int) num3.getValue();
+        System.out.println(nume1);
+        System.out.println(nume2);
+        System.out.println(nume3);
         int cont = 0;
-        if (nume1 == code.get(0)) {
-            cont ++;
-        }
-        if (nume2 == code.get(1)) {
-            cont++;
-        }
-        if (nume3 == code.get(2)) {
-            cont ++;
-        }
         
+        if (nume1 == code.get(0) && nume2 == code.get(1)&& nume3 == code.get(2)) {
+            cont = 3;}
+                   
+        
+        System.out.println(cont);
         return cont;
-    
+
     }
     public boolean correcto(int cont){
         if(cont == 3){
@@ -163,8 +200,8 @@ public class Comodin extends javax.swing.JFrame {
             return false;
         }
     }
-    
-    
+
+
     /**
      * @param args the command line arguments
      */
@@ -172,7 +209,7 @@ public class Comodin extends javax.swing.JFrame {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
@@ -203,6 +240,8 @@ public class Comodin extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton check;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel m_tiempo;
     private javax.swing.JSpinner num1;
     private javax.swing.JSpinner num2;
     private javax.swing.JSpinner num3;
