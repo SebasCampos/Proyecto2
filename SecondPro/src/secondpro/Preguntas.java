@@ -150,10 +150,6 @@ public class Preguntas extends javax.swing.JFrame {
     
     }
      
-    
-    
-    
-
      //Allows to show the matrix with the graphic interface
     public void mostrar(JLabel[][] etiquetas,String[][]logica){
         int  x = 75;

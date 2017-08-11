@@ -10,6 +10,8 @@ package secondpro;
  * @author Sebastian
  */
 public class PregLogica {
+    
+    VentaPreg h = new VentaPreg();
     //Falta hacer el cambio de imagen 
     public boolean derecha(String[][] logica){
         for (int i = 0; i < 5; i++) {
@@ -20,8 +22,7 @@ public class PregLogica {
                 else{
                 if(logica[i][j].equals("u")){
                     if(logica[i][j+1].equals("_")){
-                        //llamar metodo con pregunta
-                        //y validar la respuesta
+                        h.setVisible(true);
                         return true;
                     }
                     else if(logica[i][j+1].equals("$")){
