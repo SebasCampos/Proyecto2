@@ -17,15 +17,16 @@ public class VentaPreg extends javax.swing.JFrame {
     /**
      * Creates new form VentaPreg
      */
-    
+    //Necesito cambiar el metodo para poder contar los puntos
     ArrayList<String> pregs = new ArrayList<>();
     ArrayList<String> resp = new ArrayList<>();
-    
+    int r = 0;
     
     public VentaPreg() {
         initComponents();
-        pregA.setText("Hola");
         agregar();
+        pregA.setText(pregs.get(ale));
+        
     }
 
     /**
@@ -39,53 +40,54 @@ public class VentaPreg extends javax.swing.JFrame {
 
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        t = new javax.swing.JButton();
-        f = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         pregA = new javax.swing.JTextArea();
+        t = new javax.swing.JRadioButton();
+        f = new javax.swing.JRadioButton();
+        check = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("Vani", 0, 18)); // NOI18N
         jLabel1.setText("Pregunta");
 
-        t.setText("Verdadero");
-        t.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tActionPerformed(evt);
-            }
-        });
-
-        f.setText("Falso");
-        f.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                fActionPerformed(evt);
-            }
-        });
-
         pregA.setColumns(20);
         pregA.setRows(5);
         jScrollPane1.setViewportView(pregA);
+
+        t.setText("Verdadero");
+
+        f.setText("Falso");
+
+        check.setText("Verificar");
+        check.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                checkActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(102, 102, 102)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(98, 98, 98)
-                        .addComponent(jLabel1)
-                        .addGap(100, 100, 100))
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(t)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(f, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(27, 27, 27)
-                .addComponent(jLabel2)
+                        .addGap(102, 102, 102)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(98, 98, 98)
+                                .addComponent(jLabel1))
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(t)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(f, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(27, 27, 27)
+                        .addComponent(jLabel2))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(199, 199, 199)
+                        .addComponent(check)))
                 .addContainerGap(85, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -99,38 +101,79 @@ public class VentaPreg extends javax.swing.JFrame {
                         .addGap(26, 26, 26)
                         .addComponent(jLabel1)
                         .addGap(30, 30, 30)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(51, 51, 51)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(f)
-                            .addComponent(t))))
-                .addContainerGap(145, Short.MAX_VALUE))
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(32, 32, 32)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(t)
+                    .addComponent(f))
+                .addGap(18, 18, 18)
+                .addComponent(check)
+                .addContainerGap(123, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void fActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fActionPerformed
-        if(resp.get(ale).equals("F")){
-            JOptionPane.showMessageDialog(rootPane,"Correcto");
-            dispose();
+    private void checkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkActionPerformed
+        
+        if(t.isSelected()&& f.isSelected()){
+            JOptionPane.showMessageDialog(rootPane,"Solo debe marcar una opción");
         }
         else{
-            JOptionPane.showMessageDialog(rootPane,"Incorrecto");
-            dispose();
-        }
-    }//GEN-LAST:event_fActionPerformed
-
-    private void tActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tActionPerformed
         if(resp.get(ale).equals("V")){
-            JOptionPane.showMessageDialog(rootPane,"Correcto");
-            dispose();
+            if(t.isSelected() == true){
+                r++;
+                JOptionPane.showMessageDialog(rootPane,"Correcto");
+                dispose();
+            }
+            else{
+                r = 0;
+                JOptionPane.showMessageDialog(rootPane,"Incorrecto");
+                dispose();
+            }
+        }
+        if(resp.get(ale).equals("F")){
+            if(f.isSelected() == true){
+                r = 1;
+                System.out.println(r);
+                JOptionPane.showMessageDialog(rootPane,"Correcto");
+                
+            }else{
+                r = 0;
+                JOptionPane.showMessageDialog(rootPane,"Incorrecto");
+                dispose();
+            }
         }
         else{
             JOptionPane.showMessageDialog(rootPane,"Incorrecto");
-            dispose();
         }
-    }//GEN-LAST:event_tActionPerformed
+        }
+    }//GEN-LAST:event_checkActionPerformed
+    
+    
+    public boolean revisar(){
+        if(resp.get(ale).equals("V")){
+            if(r == 1){
+                return true;
+            }
+            else{
+                return false;
+            }
+        }
+        else if(resp.get(ale).equals("F")){
+            System.out.println(r);
+            if(r == 1){
+                System.out.println("entre");
+                return true; 
+            }else{
+                System.out.println("sali");
+                return false;
+            }
+        }
+        return false;
+        
+    }
+    
     
     public void agregar(){
             pregs.add("¿Las listas son lo mismo que un arreglo?");
@@ -139,8 +182,8 @@ public class VentaPreg extends javax.swing.JFrame {
         
    
     
-    
-    int ale = (int)(Math.random() * 50) + 0;
+    int ale = 0;
+//    int ale = (int)(Math.random() * 50) + 0;
     /**
      * @param args the command line arguments
      */
@@ -177,11 +220,12 @@ public class VentaPreg extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton f;
+    private javax.swing.JButton check;
+    private javax.swing.JRadioButton f;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea pregA;
-    private javax.swing.JButton t;
+    private javax.swing.JRadioButton t;
     // End of variables declaration//GEN-END:variables
 }

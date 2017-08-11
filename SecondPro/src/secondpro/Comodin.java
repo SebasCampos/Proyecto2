@@ -8,6 +8,7 @@ package secondpro;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 import javax.swing.SpinnerNumberModel;
 import javax.swing.SwingConstants;
 import javax.swing.Timer;
@@ -146,15 +147,29 @@ public class Comodin extends javax.swing.JFrame {
     private void checkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkActionPerformed
         if(correcto(corro())){
             // cambiar
-            System.out.println("Gano");
+            JOptionPane.showMessageDialog(rootPane,"Correcto!!!");
             t.stop();
         }
         else{
-            System.out.println("incorrecto");
+            JOptionPane.showMessageDialog(rootPane,"Incorrecto!!!");
         }
 
     }//GEN-LAST:event_checkActionPerformed
-
+    
+    public boolean ch (){
+        if(correcto(corro())){
+            // cambiar
+            return true;
+            
+        }
+        else{
+            return false;
+        }
+    
+    
+    }
+    
+    
     private void startActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_startActionPerformed
         t = new Timer(1000, new ActionListener() {
             @Override

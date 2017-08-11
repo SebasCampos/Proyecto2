@@ -12,6 +12,7 @@ package secondpro;
 public class PregLogica {
     
     VentaPreg h = new VentaPreg();
+    Comodin c = new Comodin();
     //Falta hacer el cambio de imagen 
     public boolean derecha(String[][] logica){
         for (int i = 0; i < 5; i++) {
@@ -23,10 +24,23 @@ public class PregLogica {
                 if(logica[i][j].equals("u")){
                     if(logica[i][j+1].equals("_")){
                         h.setVisible(true);
-                        return true;
+                        
+                        if(h.revisar()){
+                            return true;
+                        }
+                        else{
+                            
+                            return false;
+                        }
                     }
                     else if(logica[i][j+1].equals("$")){
-                        // llama comodin
+                        c.setVisible(true);
+                        if(c.ch()){
+                            return true;
+                        }
+                        else{
+                            return false;
+                        }
                     
                     }
                     else{
@@ -50,12 +64,22 @@ public class PregLogica {
                 else{
                 if(logica[i][j].equals("u")){
                     if(logica[i][j-1].equals("_")){
-                        //llamar metodo con pregunta
-                        //y validar la respuesta
-                        return true;
+                        h.setVisible(true);
+                        if(h.revisar()){
+                            return true;
+                        }
+                        else{
+                            return false;
+                        }
                     }
                     else if(logica[i][j-1].equals("$")){
-                        //llama comodin
+                        c.setVisible(true);
+                        if(c.ch()){
+                            return true;
+                        }
+                        else{
+                            return false;
+                        }
                     }
                     else{
                         return false;
@@ -78,12 +102,22 @@ public class PregLogica {
                 else{
                 if(logica[i][j].equals("u")){
                     if(logica[i-1][j].equals("_")){
-                        //llamar metodo con pregunta
-                        //y validar la respuesta
-                        return true;
+                        h.setVisible(true);
+                        if(h.revisar()){
+                            return true;
+                        }
+                        else{
+                            return false;
+                        }
                     }
                     else if(logica[i-1][j].equals("$")){
-                        //llama comodin
+                        c.setVisible(true);
+                        if(c.ch()){
+                            return true;
+                        }
+                        else{
+                            return false;
+                        }
                     }
                     else{
                         return false;
@@ -105,12 +139,25 @@ public class PregLogica {
                 }else{
                 if(logica[i][j].equals("u")){
                     if(logica[i+1][j].equals("_")){
+                        h.setVisible(true);
+                        if(h.revisar()){
+                            return true;
+                        }
+                        else{
+                            return false;
+                        }
                         //llamar metodo con pregunta
                         //y validar la respuesta
-                        return true;
+                        
                     }
                     else if(logica[i+1][j].equals("$")){
-                        //llama comodin
+                        c.setVisible(true);
+                        if(c.ch()){
+                            return true;
+                        }
+                        else{
+                            return false;
+                        }
                     }
                     else{
                         return false;
