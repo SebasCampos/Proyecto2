@@ -30,9 +30,7 @@ public class Comodin extends javax.swing.JFrame {
     int nume3 = 0;
     ArrayList<Integer> code = new ArrayList<>();
     public Comodin() {
-        this.nume1 = nume1;
-        this.nume2 = nume2;
-        this.nume3 = nume3;
+        
         initComponents();
         SpinnerNumberModel cantP = new SpinnerNumberModel();
         cantP.setMaximum(10);
@@ -145,10 +143,11 @@ public class Comodin extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void checkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkActionPerformed
-        if(correcto(corro())){
+        if(ch()){
             // cambiar
             JOptionPane.showMessageDialog(rootPane,"Correcto!!!");
             t.stop();
+            dispose();
         }
         else{
             JOptionPane.showMessageDialog(rootPane,"Incorrecto!!!");
@@ -177,6 +176,7 @@ public class Comodin extends javax.swing.JFrame {
                 count ++;
                 if(count == 60){
                     t.stop();
+                    dispose();
                 }
                 else{
                 m_tiempo.setHorizontalAlignment(SwingConstants.CENTER);
@@ -201,8 +201,14 @@ public class Comodin extends javax.swing.JFrame {
         System.out.println(nume3);
         int cont = 0;
         
-        if (nume1 == code.get(0) && nume2 == code.get(1)&& nume3 == code.get(2)) {
-            cont = 3;}
+        if (nume1 == code.get(0)) {
+            cont++;}
+        if(nume2 == code.get(1)){
+            cont++;
+        }
+        if(nume3 == code.get(2)){
+            cont++;
+        }
                    
         
         System.out.println(cont);

@@ -137,6 +137,7 @@ public class VentaPreg extends javax.swing.JFrame {
                 r = 1;
                 System.out.println(r);
                 JOptionPane.showMessageDialog(rootPane,"Correcto");
+                dispose();
                 
             }else{
                 r = 0;

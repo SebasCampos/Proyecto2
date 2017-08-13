@@ -13,34 +13,27 @@ public class PregLogica {
     
     VentaPreg h = new VentaPreg();
     Comodin c = new Comodin();
-    //Falta hacer el cambio de imagen 
+    boolean veri = false;
+    
+    
     public boolean derecha(String[][] logica){
+        int r = h.r;
         for (int i = 0; i < 5; i++) {
             for (int j = 0; j < 8; j++) {
-                if((j+1)>5){
+                if(logica[i][j].equals("u")){
+                if((j+1)>7){
                     return false;
                 }
                 else{
-                if(logica[i][j].equals("u")){
+                
                     if(logica[i][j+1].equals("_")){
-                        h.setVisible(true);
+                        return true;
                         
-                        if(h.revisar()){
-                            return true;
-                        }
-                        else{
-                            
-                            return false;
-                        }
+                       
                     }
                     else if(logica[i][j+1].equals("$")){
                         c.setVisible(true);
-                        if(c.ch()){
-                            return true;
-                        }
-                        else{
-                            return false;
-                        }
+                        
                     
                     }
                     else{
@@ -58,19 +51,21 @@ public class PregLogica {
     public boolean izquierda(String[][] logica){
         for (int i = 0; i < 5; i++) {
             for (int j = 0; j < 8; j++) {
+                if(logica[i][j].equals("u")){
                 if((j-1)<0){
                     return false;
                 }
                 else{
-                if(logica[i][j].equals("u")){
+                
                     if(logica[i][j-1].equals("_")){
-                        h.setVisible(true);
-                        if(h.revisar()){
+//                        h.setVisible(true);
+//                        if(h.revisar()){
+//                            return true;
+//                        }
+//                        else{
+//                            return false;
+//                        }
                             return true;
-                        }
-                        else{
-                            return false;
-                        }
                     }
                     else if(logica[i][j-1].equals("$")){
                         c.setVisible(true);
@@ -96,19 +91,21 @@ public class PregLogica {
     public boolean arriba(String[][] logica){
         for (int i = 0; i < 5; i++) {
             for (int j = 0; j < 8; j++) {
+                if(logica[i][j].equals("u")){
                 if((i-1)<0){
                     return false;
                 }
                 else{
-                if(logica[i][j].equals("u")){
+                
                     if(logica[i-1][j].equals("_")){
-                        h.setVisible(true);
-                        if(h.revisar()){
-                            return true;
-                        }
-                        else{
-                            return false;
-                        }
+//                        h.setVisible(true);
+//                        if(h.revisar()){
+//                            return true;
+//                        }
+//                        else{
+//                            return false;
+//                        
+                        return true;
                     }
                     else if(logica[i-1][j].equals("$")){
                         c.setVisible(true);
@@ -134,20 +131,22 @@ public class PregLogica {
     public boolean abajo(String[][] logica){
         for (int i = 0; i < 5; i++) {
             for (int j = 0; j < 8; j++) {
-                if((i+1)>8){
+                if(logica[i][j].equals("u")){
+                if((i+1)>5){
                     return false;
                 }else{
-                if(logica[i][j].equals("u")){
+                
                     if(logica[i+1][j].equals("_")){
-                        h.setVisible(true);
-                        if(h.revisar()){
-                            return true;
-                        }
-                        else{
-                            return false;
-                        }
+//                        h.setVisible(true);
+//                        if(h.revisar()){
+//                            return true;
+//                        }
+//                        else{
+//                            return false;
+//                        }
                         //llamar metodo con pregunta
                         //y validar la respuesta
+                        return true;
                         
                     }
                     else if(logica[i+1][j].equals("$")){
@@ -164,8 +163,8 @@ public class PregLogica {
                         
                     }
                 
-                }}
-            }
+                }
+            }}
             
         }
         return false;

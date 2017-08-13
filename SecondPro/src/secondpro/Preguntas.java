@@ -10,11 +10,12 @@ import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
+import javax.swing.SwingUtilities;
 import javax.swing.border.Border;
 
 /**
  *
- * @author h
+ * @author Sebastian
  */
 public class Preguntas extends javax.swing.JFrame {
 
@@ -53,11 +54,11 @@ public class Preguntas extends javax.swing.JFrame {
         tab.setLayout(tabLayout);
         tabLayout.setHorizontalGroup(
             tabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 700, Short.MAX_VALUE)
+            .addGap(0, 785, Short.MAX_VALUE)
         );
         tabLayout.setVerticalGroup(
             tabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 512, Short.MAX_VALUE)
+            .addGap(0, 491, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -66,15 +67,15 @@ public class Preguntas extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(tab, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(30, 30, 30))
+                .addComponent(tab, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(53, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(tab, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(24, 24, 24))
+                .addComponent(tab, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(123, Short.MAX_VALUE))
         );
 
         pack();
@@ -82,17 +83,30 @@ public class Preguntas extends javax.swing.JFrame {
 
     private void formKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_formKeyPressed
         PregLogica x = new PregLogica();
-        
+        int code;
         if(evt.getKeyCode()== 39){
             if(x.derecha(logic)){
+                code = 39;
+                cambio(code);
+                tab.removeAll();
+                tab.setVisible(false);
+                tab.setVisible(true);
+                mostrar(etiq,logic);
                 
                 System.out.println("si");
+                
             }
             else{
                 System.out.println("no");
             }
         }else if(evt.getKeyCode() == 37){
             if(x.izquierda(logic)){
+                code = 37;
+                cambio(code);
+                tab.removeAll();
+                tab.setVisible(false);
+                tab.setVisible(true);
+                mostrar(etiq,logic);
                 System.out.println("si");
             }
             else{
@@ -101,7 +115,14 @@ public class Preguntas extends javax.swing.JFrame {
         }
         else if(evt.getKeyCode()== 38){
             if(x.arriba(logic)){
+                code = 38;
+                cambio(code);
+                tab.removeAll();
+                tab.setVisible(false);
+                tab.setVisible(true);
+                mostrar(etiq,logic);
                 System.out.println("si");
+                        
             }
             else{
                 System.out.println("no");
@@ -109,6 +130,12 @@ public class Preguntas extends javax.swing.JFrame {
         }
         else if(evt.getKeyCode()== 40){
             if(x.abajo(logic)){
+                code = 40;
+                cambio(code);
+                tab.removeAll();
+                tab.setVisible(false);
+                tab.setVisible(true);
+                mostrar(etiq,logic);
                 System.out.println("si");
             }
             else{
@@ -119,7 +146,7 @@ public class Preguntas extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(rootPane,"Tecla invalida");
         }
     }//GEN-LAST:event_formKeyPressed
-
+    //Allows to show the matrix
     public void show1(){
         int x =(int) (Math.random() * 5) + 0;
         int y =(int) (Math.random() * 8) + 0;
@@ -155,23 +182,17 @@ public class Preguntas extends javax.swing.JFrame {
         int  x = 75;
         int  y = 75;
         Border border = BorderFactory.createLineBorder(Color.black, 1);
-        ImageIcon user = new ImageIcon(this.getClass().getResource("/imagenes/User.jpg"));
         
-        etiquetas[0][0] = new JLabel();
-        etiquetas[0][0].setBounds(x, y, 75, 75);
-        etiquetas[0][0].setIcon(user);
-        etiquetas[0][0].setBorder(border);
-        tab.add(etiquetas[0][0]);
+        
         for (int i = 0; i < 5; i++) {
             for (int j = 0; j < 8; j++) {
-                
+
                 if(logica[i][j].equals("_")){
                    ImageIcon paso = new ImageIcon(this.getClass().getResource("/imagenes/paso.jpg"));
                    etiquetas[i][j] = new JLabel();
                    etiquetas[i][j].setBounds(x, y, 75, 75);
                    etiquetas[i][j].setIcon(paso);
                    etiquetas[i][j].setBorder(border);
-                   
                    tab.add(etiquetas[i][j]);
                 }
                 else if(logica[i][j].equals("*")){
@@ -191,24 +212,80 @@ public class Preguntas extends javax.swing.JFrame {
                    
                    tab.add(etiquetas[i][j]);                    
                 }
+                else if(logica[i][j].equals("u")){
+                    ImageIcon user = new ImageIcon(this.getClass().getResource("/imagenes/User.jpg"));
+                    etiquetas[i][j] = new JLabel();
+                    etiquetas[i][j].setBounds(x, y, 75, 75);
+                    etiquetas[i][j].setIcon(user);
+                    etiquetas[i][j].setBorder(border);
+                    tab.add(etiquetas[i][j]);
+                    
+                }
                 else{
                     ImageIcon meta = new ImageIcon(this.getClass().getResource("/imagenes/meta.jpg"));
                     etiquetas[4][7] = new JLabel();
                     etiquetas[4][7].setBounds(x, y, 75, 75);
                     etiquetas[4][7].setIcon(meta);
                     etiquetas[4][7].setBorder(border);
-                    tab.add(etiquetas[4][7]);
+                
                 }
                 x= x+75;
             }
             x = 75;
             y = y+75;
         }
+        
+        tab.add(etiquetas[4][7]);
 //        tab.setVisible(false);
 //        tab.setVisible(true);
     }
     
+    public void cambio( int code){
+        int round = 0;
+        for (int i = 0; i < 5; i++) {
+            for (int j = 0; j < 8; j++) {
+                
+                if (logic[i][j].equals("u")) {
+                    if(code == 39){
+                        //Right
+                        logic[i][j+1] = "u";
+                        logic[i][j] = "_";
+                        round = 1;
+                        break;
+                    }
+                    else if(code == 37){
+                        //Left
+                        logic[i][j-1] = "u";
+                        logic[i][j] = "_";
+                        round = 1;
+                        break;
+                    }
+                    else if(code == 38){
+                        //Up
+                        logic[i-1][j] = "u";
+                        logic[i][j] = "_";
+                        round = 1;
+                        break;
+                    }
+                    else{
+                        //Down
+                        System.out.println(i);
+                        logic[i+1][j] = "u";
+                        logic[i][j] = "_";
+                        round = 1;
+                        break;
+                    }
+                } 
+                
+            }
+            if(round == 1){
+                break;
+            }
+        }
     
+    
+    
+    }
     
     
     
