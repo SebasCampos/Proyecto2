@@ -5,19 +5,21 @@
  */
 package secondpro;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Sebastian
  */
 public class PregLogica {
     
-    VentaPreg h = new VentaPreg();
-    Comodin c = new Comodin();
-    boolean veri = false;
+   
+    
+    
     
     
     public boolean derecha(String[][] logica){
-        int r = h.r;
+        Preguntas y = new Preguntas();
         for (int i = 0; i < 5; i++) {
             for (int j = 0; j < 8; j++) {
                 if(logica[i][j].equals("u")){
@@ -27,14 +29,13 @@ public class PregLogica {
                 else{
                 
                     if(logica[i][j+1].equals("_")){
-                        return true;
                         
+                        return true;
+
                        
                     }
                     else if(logica[i][j+1].equals("$")){
-                        c.setVisible(true);
-                        
-                    
+                        return true;
                     }
                     else{
                         return false;
@@ -68,13 +69,7 @@ public class PregLogica {
                             return true;
                     }
                     else if(logica[i][j-1].equals("$")){
-                        c.setVisible(true);
-                        if(c.ch()){
-                            return true;
-                        }
-                        else{
-                            return false;
-                        }
+                       return true;
                     }
                     else{
                         return false;
@@ -108,13 +103,7 @@ public class PregLogica {
                         return true;
                     }
                     else if(logica[i-1][j].equals("$")){
-                        c.setVisible(true);
-                        if(c.ch()){
-                            return true;
-                        }
-                        else{
-                            return false;
-                        }
+                        return true;
                     }
                     else{
                         return false;
@@ -150,13 +139,7 @@ public class PregLogica {
                         
                     }
                     else if(logica[i+1][j].equals("$")){
-                        c.setVisible(true);
-                        if(c.ch()){
-                            return true;
-                        }
-                        else{
-                            return false;
-                        }
+                        return true;
                     }
                     else{
                         return false;

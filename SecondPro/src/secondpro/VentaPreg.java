@@ -20,7 +20,7 @@ public class VentaPreg extends javax.swing.JFrame {
     //Necesito cambiar el metodo para poder contar los puntos
     ArrayList<String> pregs = new ArrayList<>();
     ArrayList<String> resp = new ArrayList<>();
-    int r = 0;
+    PregLogica v = new PregLogica();
     
     public VentaPreg() {
         initComponents();
@@ -122,25 +122,25 @@ public class VentaPreg extends javax.swing.JFrame {
         else{
         if(resp.get(ale).equals("V")){
             if(t.isSelected() == true){
-                r++;
+                
                 JOptionPane.showMessageDialog(rootPane,"Correcto");
                 dispose();
             }
             else{
-                r = 0;
+                
                 JOptionPane.showMessageDialog(rootPane,"Incorrecto");
                 dispose();
             }
         }
         if(resp.get(ale).equals("F")){
             if(f.isSelected() == true){
-                r = 1;
-                System.out.println(r);
+               
+                
                 JOptionPane.showMessageDialog(rootPane,"Correcto");
                 dispose();
                 
             }else{
-                r = 0;
+                
                 JOptionPane.showMessageDialog(rootPane,"Incorrecto");
                 dispose();
             }
@@ -154,22 +154,15 @@ public class VentaPreg extends javax.swing.JFrame {
     
     public boolean revisar(){
         if(resp.get(ale).equals("V")){
-            if(r == 1){
+            
                 return true;
-            }
-            else{
-                return false;
-            }
+
         }
         else if(resp.get(ale).equals("F")){
-            System.out.println(r);
-            if(r == 1){
-                System.out.println("entre");
+
                 return true; 
-            }else{
-                System.out.println("sali");
-                return false;
-            }
+  
+            
         }
         return false;
         
