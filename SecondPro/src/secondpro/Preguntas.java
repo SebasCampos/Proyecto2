@@ -90,6 +90,8 @@ public class Preguntas extends javax.swing.JFrame {
         iniciar = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         m_tiempo = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        countPoints = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         addKeyListener(new java.awt.event.KeyAdapter() {
@@ -233,6 +235,12 @@ public class Preguntas extends javax.swing.JFrame {
                 .addGap(36, 36, 36))
         );
 
+        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel3.setText("Puntos");
+
+        countPoints.setBackground(new java.awt.Color(255, 255, 255));
+        countPoints.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -247,6 +255,12 @@ public class Preguntas extends javax.swing.JFrame {
                         .addComponent(preguntas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 77, Short.MAX_VALUE)))
                 .addContainerGap())
+            .addGroup(layout.createSequentialGroup()
+                .addGap(191, 191, 191)
+                .addComponent(jLabel3)
+                .addGap(18, 18, 18)
+                .addComponent(countPoints, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -258,7 +272,11 @@ public class Preguntas extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(comodin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(tab, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(84, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel3)
+                    .addComponent(countPoints, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(24, 24, 24))
         );
 
         pack();
@@ -270,12 +288,12 @@ public class Preguntas extends javax.swing.JFrame {
         if(evt.getKeyCode()== 39){
             if(x1.derecha(logic)){
                 code = 39;
-              
-                    comodin.setVisible(true);
-                
-//                preguntas.setVisible(true);
-//                addPreg();
-                
+                if(findComo(code)== true){
+                    comodin.setVisible(true);}
+                else{
+                preguntas.setVisible(true);
+                addPreg();
+                }
             }
             else{
                 JOptionPane.showMessageDialog(rootPane,"Hay un obstaculo");
@@ -285,14 +303,13 @@ public class Preguntas extends javax.swing.JFrame {
          
             if (x1.izquierda(logic)) {
                 code = 37;
-               
-                    comodin.setVisible(true);
-                
-//                preguntas.setVisible(true);
-//                addPreg();
-                
-                
-    
+                if(findComo(code)== true){
+                    comodin.setVisible(true);}
+                else{
+                preguntas.setVisible(true);
+                addPreg();
+                }
+
             }
             else{
                 JOptionPane.showMessageDialog(rootPane,"Hay un obstaculo");
@@ -302,12 +319,13 @@ public class Preguntas extends javax.swing.JFrame {
         else if(evt.getKeyCode()== 38){
             if(x1.arriba(logic)){
                 code = 38;    
-               
-                    comodin.setVisible(true);
-                
-//                preguntas.setVisible(true);
-//                addPreg();
-                
+                if(findComo(code)== true){
+                    comodin.setVisible(true);}
+                else{
+                preguntas.setVisible(true);
+                addPreg();
+                }
+ 
             }
             else{
                 JOptionPane.showMessageDialog(rootPane,"Hay un obstaculo");
@@ -317,13 +335,13 @@ public class Preguntas extends javax.swing.JFrame {
         else if(evt.getKeyCode()== 40){
             if(x1.abajo(logic)){
                 code = 40;
-                    comodin.setVisible(true);
-                
-//                preguntas.setVisible(true);
-//                addPreg();
-                
-                
-                
+                if(findComo(code)== true){
+                    comodin.setVisible(true);}
+                else{
+                preguntas.setVisible(true);
+                addPreg();
+                }
+
             }
             else{
                 JOptionPane.showMessageDialog(rootPane,"Hay un obstaculo");
@@ -343,7 +361,9 @@ public class Preguntas extends javax.swing.JFrame {
         else{
         if(resp.get(ale).equals("V")){
             if(V.isSelected() == true){
-                
+                puntos++;
+                countPoints.setText(Integer.toString(puntos));
+                countPoints.setHorizontalAlignment(SwingConstants.CENTER);
                 JOptionPane.showMessageDialog(rootPane,"Correcto");
                 System.out.println(code);
                 cambio(code);
@@ -355,7 +375,9 @@ public class Preguntas extends javax.swing.JFrame {
                 
             }
             else{
-                
+                puntos--;
+                countPoints.setText(Integer.toString(puntos));
+                countPoints.setHorizontalAlignment(SwingConstants.CENTER);
                 JOptionPane.showMessageDialog(rootPane,"Incorrecto");
                 addObsta();
                 tab.removeAll();
@@ -369,7 +391,9 @@ public class Preguntas extends javax.swing.JFrame {
         }
         if(resp.get(ale).equals("F")){
             if(F.isSelected() == true){
- 
+                puntos++;
+                countPoints.setText(Integer.toString(puntos));
+                countPoints.setHorizontalAlignment(SwingConstants.CENTER);
                 JOptionPane.showMessageDialog(rootPane,"Correcto");
                 cambio(code);
                 tab.removeAll();
@@ -379,7 +403,9 @@ public class Preguntas extends javax.swing.JFrame {
                 preguntas.setVisible(false);
                 
             }else{
-                
+                puntos--;
+                countPoints.setText(Integer.toString(puntos));
+                countPoints.setHorizontalAlignment(SwingConstants.CENTER);
                 JOptionPane.showMessageDialog(rootPane,"Incorrecto");
                 addObsta();
                 tab.removeAll();
@@ -404,7 +430,7 @@ public class Preguntas extends javax.swing.JFrame {
                 count ++;
                 if(count == 60){
                     t.stop();
-                    dispose();
+                    comodin.setVisible(false);
                 }
                 else{
                 m_tiempo.setHorizontalAlignment(SwingConstants.CENTER);
@@ -627,7 +653,76 @@ public class Preguntas extends javax.swing.JFrame {
 
     }
 
+  public boolean findComo(int cod){
+      for (int i = 0; i < 5; i++) {
+          for (int j = 0; j < 8; j++) {
+              if (logic[i][j].equals("u")) {
+                  if(cod == 37){
+                      //izquierda
+                      if((j-1)<0){
+                    return false;
+                }
+                else{
+                if(logic[i][j-1].equals("$")){
+                       return true;
+                    }
+                    else{
+                        return false;
+                        
+                    }}
+                  }
+                  else if(cod ==39){
+                      //derecha
+                       if((j+1)>7){
+                    return false;
+                }
+                else{
+                     if(logic[i][j+1].equals("$")){
+                        return true;
+                    }
+                    else{
+                        return false;
+                        
+                    }
+                  }}
+                  else if(cod == 38){
+                      //arriba
+                      if((i-1)<0){
+                    return false;
+                }
+                else{
+                    if(logic[i-1][j].equals("$")){
+                        return true;
+                    }
+                    else{
+                        return false;
+                        
+                    }
+                  }}
+                  else{
+                      //abajo
+                      if ((i + 1) > 5) {
+                      return false;
+                  } else {
+
+                      if (logic[i + 1][j].equals("$")) {
+                          return true;
+                      } else {
+                          return false;
+
+                      }
+              }
+                  }
+              
+                  
+                  
+              
+          }
+      }
   
+  }
+      return false;
+  }
    
    
     /**
@@ -670,10 +765,12 @@ public class Preguntas extends javax.swing.JFrame {
     private javax.swing.JRadioButton V;
     private javax.swing.JTextArea addP;
     private javax.swing.JPanel comodin;
+    private javax.swing.JLabel countPoints;
     private javax.swing.JButton iniciar;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel m_tiempo;
     private javax.swing.JSpinner num1;
