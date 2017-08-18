@@ -6,11 +6,16 @@
 package secondpro;
 
 import java.awt.Color;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
+import javax.swing.SpinnerNumberModel;
+import javax.swing.SwingConstants;
+import javax.swing.Timer;
 import javax.swing.border.Border;
 
 /**
@@ -22,7 +27,12 @@ public class Preguntas extends javax.swing.JFrame {
     /**
      * Creates new form Preguntas
      */
-        
+    private Timer t;
+    int count = 0;
+    int nume1 = 0;
+    int nume2 = 0;
+    int nume3 = 0;
+    ArrayList<Integer> codigo = new ArrayList<>();    
     JLabel eti = new JLabel();
     JLabel [][] etiq = new JLabel[5][8];
     String [][] logic = new String[5][8];
@@ -36,6 +46,18 @@ public class Preguntas extends javax.swing.JFrame {
     boolean paso = false;
     public Preguntas() {
         initComponents();
+        SpinnerNumberModel cantP = new SpinnerNumberModel();
+        cantP.setMaximum(10);
+        cantP.setMinimum(0);
+        SpinnerNumberModel cantP1 = new SpinnerNumberModel();
+        cantP1.setMaximum(10);
+        cantP1.setMinimum(0);
+        SpinnerNumberModel cantP2 = new SpinnerNumberModel();
+        cantP2.setMaximum(10);
+        cantP2.setMinimum(0);
+        num1.setModel(cantP);
+        num2.setModel(cantP1);
+        num3.setModel(cantP2);
         show1();
         
         preguntas.setVisible(false);
@@ -60,6 +82,14 @@ public class Preguntas extends javax.swing.JFrame {
         F = new javax.swing.JRadioButton();
         jButton1 = new javax.swing.JButton();
         comodin = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        num1 = new javax.swing.JSpinner();
+        num2 = new javax.swing.JSpinner();
+        num3 = new javax.swing.JSpinner();
+        probar = new javax.swing.JButton();
+        iniciar = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        m_tiempo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         addKeyListener(new java.awt.event.KeyAdapter() {
@@ -127,15 +157,80 @@ public class Preguntas extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel1.setText("Adivina los Números");
+
+        probar.setText("Probar");
+        probar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                probarActionPerformed(evt);
+            }
+        });
+
+        iniciar.setText("Iniciar");
+        iniciar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                iniciarActionPerformed(evt);
+            }
+        });
+
+        jLabel2.setFont(new java.awt.Font("Vani", 0, 18)); // NOI18N
+        jLabel2.setText("Tiempo");
+
+        m_tiempo.setBackground(new java.awt.Color(255, 255, 255));
+        m_tiempo.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
         javax.swing.GroupLayout comodinLayout = new javax.swing.GroupLayout(comodin);
         comodin.setLayout(comodinLayout);
         comodinLayout.setHorizontalGroup(
             comodinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 482, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, comodinLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(comodinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, comodinLayout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addGap(169, 169, 169))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, comodinLayout.createSequentialGroup()
+                        .addComponent(probar)
+                        .addGap(217, 217, 217))))
+            .addGroup(comodinLayout.createSequentialGroup()
+                .addGap(142, 142, 142)
+                .addComponent(num1, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(51, 51, 51)
+                .addComponent(num2, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(47, 47, 47)
+                .addComponent(num3, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, comodinLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jLabel2)
+                .addGap(66, 66, 66))
+            .addGroup(comodinLayout.createSequentialGroup()
+                .addGap(46, 46, 46)
+                .addComponent(iniciar)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(m_tiempo, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(48, 48, 48))
         );
         comodinLayout.setVerticalGroup(
             comodinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(comodinLayout.createSequentialGroup()
+                .addGap(24, 24, 24)
+                .addComponent(jLabel1)
+                .addGap(18, 18, 18)
+                .addGroup(comodinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(num1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(num2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(num3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(probar)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 15, Short.MAX_VALUE)
+                .addComponent(jLabel2)
+                .addGap(13, 13, 13)
+                .addGroup(comodinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(iniciar)
+                    .addComponent(m_tiempo, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(36, 36, 36))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -150,20 +245,20 @@ public class Preguntas extends javax.swing.JFrame {
                     .addComponent(comodin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(preguntas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                        .addGap(0, 77, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(preguntas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(comodin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(comodin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(tab, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(123, Short.MAX_VALUE))
+                .addContainerGap(84, Short.MAX_VALUE))
         );
 
         pack();
@@ -174,62 +269,65 @@ public class Preguntas extends javax.swing.JFrame {
         
         if(evt.getKeyCode()== 39){
             if(x1.derecha(logic)){
-                
-                preguntas.setVisible(true);
-                addPreg();
                 code = 39;
-                        
-                        
- 
-       
+              
+                    comodin.setVisible(true);
+                
+//                preguntas.setVisible(true);
+//                addPreg();
+                
             }
             else{
                 JOptionPane.showMessageDialog(rootPane,"Hay un obstaculo");
+                
             }
         }else if(evt.getKeyCode() == 37){
          
             if (x1.izquierda(logic)) {
-
                 code = 37;
-                cambio(code);
-                tab.removeAll();
-                tab.setVisible(false);
-                tab.setVisible(true);
-                mostrar(etiq, logic);
-                preguntas.setVisible(false);
+               
+                    comodin.setVisible(true);
+                
+//                preguntas.setVisible(true);
+//                addPreg();
+                
+                
     
             }
             else{
                 JOptionPane.showMessageDialog(rootPane,"Hay un obstaculo");
+                
             }
         }
         else if(evt.getKeyCode()== 38){
             if(x1.arriba(logic)){
-                code = 38;
-                cambio(code);
-                tab.removeAll();
-                tab.setVisible(false);
-                tab.setVisible(true);
-                mostrar(etiq,logic);
+                code = 38;    
+               
+                    comodin.setVisible(true);
                 
-                        
+//                preguntas.setVisible(true);
+//                addPreg();
+                
             }
             else{
                 JOptionPane.showMessageDialog(rootPane,"Hay un obstaculo");
+              
             }
         }
         else if(evt.getKeyCode()== 40){
             if(x1.abajo(logic)){
                 code = 40;
-                cambio(code);
-                tab.removeAll();
-                tab.setVisible(false);
-                tab.setVisible(true);
-                mostrar(etiq,logic);
+                    comodin.setVisible(true);
+                
+//                preguntas.setVisible(true);
+//                addPreg();
+                
+                
                 
             }
             else{
                 JOptionPane.showMessageDialog(rootPane,"Hay un obstaculo");
+                
             }
         }
         else{
@@ -259,7 +357,13 @@ public class Preguntas extends javax.swing.JFrame {
             else{
                 
                 JOptionPane.showMessageDialog(rootPane,"Incorrecto");
+                addObsta();
+                tab.removeAll();
+                tab.setVisible(false);
+                tab.setVisible(true);
+                mostrar(etiq, logic);
                 preguntas.setVisible(false);
+                
                 
             }
         }
@@ -277,6 +381,11 @@ public class Preguntas extends javax.swing.JFrame {
             }else{
                 
                 JOptionPane.showMessageDialog(rootPane,"Incorrecto");
+                addObsta();
+                tab.removeAll();
+                tab.setVisible(false);
+                tab.setVisible(true);
+                mostrar(etiq, logic);
                 preguntas.setVisible(false);
                 
             }
@@ -287,6 +396,42 @@ public class Preguntas extends javax.swing.JFrame {
         }
         }
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void iniciarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_iniciarActionPerformed
+        t = new Timer(1000, new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                count ++;
+                if(count == 60){
+                    t.stop();
+                    dispose();
+                }
+                else{
+                m_tiempo.setHorizontalAlignment(SwingConstants.CENTER);
+                m_tiempo.setText(count+"");
+            }}
+        });
+        t.start();
+        
+        for (int i = 0; i != 3; i++) {
+            int al  = (int) (Math.random()*10)+0;
+            codigo.add(al);
+        }
+        System.out.println(codigo);
+        iniciar.setEnabled(false);
+    }//GEN-LAST:event_iniciarActionPerformed
+
+    private void probarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_probarActionPerformed
+        if(corro() == 3){
+            // cambiar
+            JOptionPane.showMessageDialog(rootPane,"Correcto!!!");
+            t.stop();
+            dispose();
+        }
+        else{
+            JOptionPane.showMessageDialog(rootPane,"Incorrecto!!!");
+        }
+    }//GEN-LAST:event_probarActionPerformed
     //Allows to show the matrix
     public void show1(){
         int x =(int) (Math.random() * 5) + 0;
@@ -303,11 +448,13 @@ public class Preguntas extends javax.swing.JFrame {
         while(conta < 10){
             int alex =(int) (Math.random() * 5) + 0;
             int aley =(int) (Math.random() * 8) + 0;
+            if(alex != 0 || alex != 1){
+                if(aley != 1 || aley != 0){
             if(logic[alex][aley].equals("_")){
                 logic[alex][aley]= "*";
                 conta++;
+            }}
             }
-             
             
         }
         logic[0][0] = "u";
@@ -381,6 +528,7 @@ public class Preguntas extends javax.swing.JFrame {
 //        tab.setVisible(true);
     }
     
+    //Makes the change in the logic matrix for the new positions
     public void cambio( int code){
         int round = 0;
         for (int i = 0; i < 5; i++) {
@@ -427,7 +575,7 @@ public class Preguntas extends javax.swing.JFrame {
     
     
     }
-    
+    //Add questions to the text area
     public void addPreg(){
         
         addPreguntas();
@@ -435,17 +583,53 @@ public class Preguntas extends javax.swing.JFrame {
         
     
     }
-
+    //Add the questions to a list
     public void addPreguntas(){
         pregs.add("¿Las listas son lo mismo que un arreglo?"); pregs.add("¿Un String es lo mismo que un Char?");
         resp.add("F"); resp.add("F");
     
     }
     
+    public void addObsta(){
+        while(true){
+        int x = (int)(Math.random() * 5) + 0;
+        int y = (int)(Math.random() * 8) + 0;
+        
+        if(logic[x][y].equals("_")){
+            logic[x][y]="*";
+            break;
+        }
+        
+        }
+    }
     
-    
-    
-    
+   public int corro(){
+        nume1 = (int) num1.getValue();
+        nume2 = (int) num2.getValue();
+        nume3 = (int) num3.getValue();
+        System.out.println(nume1);
+        System.out.println(nume2);
+        System.out.println(nume3);
+        int cont = 0;
+        
+        if (nume1 == codigo.get(0)) {
+            cont++;}
+        if(nume2 == codigo.get(1)){
+            cont++;
+        }
+        if(nume3 == codigo.get(2)){
+            cont++;
+        }
+                   
+        
+        System.out.println(cont);
+        return cont;
+
+    }
+
+  
+   
+   
     /**
      * @param args the command line arguments
      */
@@ -486,9 +670,17 @@ public class Preguntas extends javax.swing.JFrame {
     private javax.swing.JRadioButton V;
     private javax.swing.JTextArea addP;
     private javax.swing.JPanel comodin;
+    private javax.swing.JButton iniciar;
     private javax.swing.JButton jButton1;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel m_tiempo;
+    private javax.swing.JSpinner num1;
+    private javax.swing.JSpinner num2;
+    private javax.swing.JSpinner num3;
     private javax.swing.JPanel preguntas;
+    private javax.swing.JButton probar;
     private javax.swing.JPanel tab;
     // End of variables declaration//GEN-END:variables
 }
