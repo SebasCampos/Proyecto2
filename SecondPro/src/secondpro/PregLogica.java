@@ -126,15 +126,7 @@ public class PregLogica {
                 }else{
                 
                     if(logica[i+1][j].equals("_")){
-//                        h.setVisible(true);
-//                        if(h.revisar()){
-//                            return true;
-//                        }
-//                        else{
-//                            return false;
-//                        }
-                        //llamar metodo con pregunta
-                        //y validar la respuesta
+ 
                         return true;
                         
                     }

@@ -30,11 +30,14 @@ public class Preguntas extends javax.swing.JFrame {
     ArrayList<String> resp = new ArrayList<>();
     PregLogica x1 = new PregLogica();
     int ale = (int)(Math.random() * 1) + 1;
+    int puntos = 0;
+    int code = 0;
     
     boolean paso = false;
     public Preguntas() {
         initComponents();
         show1();
+        
         preguntas.setVisible(false);
         comodin.setVisible(false);
        
@@ -55,7 +58,7 @@ public class Preguntas extends javax.swing.JFrame {
         addP = new javax.swing.JTextArea();
         V = new javax.swing.JRadioButton();
         F = new javax.swing.JRadioButton();
-        look = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
         comodin = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -84,10 +87,10 @@ public class Preguntas extends javax.swing.JFrame {
 
         F.setText("Falso");
 
-        look.setText("Verificar");
-        look.addActionListener(new java.awt.event.ActionListener() {
+        jButton1.setText("Verificar");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                lookActionPerformed(evt);
+                jButton1ActionPerformed(evt);
             }
         });
 
@@ -96,38 +99,39 @@ public class Preguntas extends javax.swing.JFrame {
         preguntasLayout.setHorizontalGroup(
             preguntasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(preguntasLayout.createSequentialGroup()
-                .addGap(37, 37, 37)
-                .addGroup(preguntasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 315, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(preguntasLayout.createSequentialGroup()
-                        .addComponent(V, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(F, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(39, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, preguntasLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(look)
-                .addGap(153, 153, 153))
+                .addContainerGap(31, Short.MAX_VALUE)
+                .addGroup(preguntasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, preguntasLayout.createSequentialGroup()
+                        .addGroup(preguntasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(preguntasLayout.createSequentialGroup()
+                                .addComponent(V)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(F, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 377, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(25, 25, 25))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, preguntasLayout.createSequentialGroup()
+                        .addComponent(jButton1)
+                        .addGap(162, 162, 162))))
         );
         preguntasLayout.setVerticalGroup(
             preguntasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(preguntasLayout.createSequentialGroup()
-                .addGap(21, 21, 21)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(20, 20, 20)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(preguntasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(F)
-                    .addComponent(V))
+                    .addComponent(V)
+                    .addComponent(F))
                 .addGap(18, 18, 18)
-                .addComponent(look)
-                .addContainerGap(46, Short.MAX_VALUE))
+                .addComponent(jButton1)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout comodinLayout = new javax.swing.GroupLayout(comodin);
         comodin.setLayout(comodinLayout);
         comodinLayout.setHorizontalGroup(
             comodinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGap(0, 482, Short.MAX_VALUE)
         );
         comodinLayout.setVerticalGroup(
             comodinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -143,10 +147,10 @@ public class Preguntas extends javax.swing.JFrame {
                 .addComponent(tab, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(27, 27, 27)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(comodin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(preguntas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 8, Short.MAX_VALUE))
-                    .addComponent(comodin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -167,32 +171,33 @@ public class Preguntas extends javax.swing.JFrame {
 
     private void formKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_formKeyPressed
         
-        int code = 0;
+        
         if(evt.getKeyCode()== 39){
- 
             if(x1.derecha(logic)){
-
+                
+                preguntas.setVisible(true);
+                addPreg();
                 code = 39;
-                cambio(code);
-                tab.removeAll();
-                tab.setVisible(false);
-                tab.setVisible(true);
-                mostrar(etiq,logic);
-
+                        
+                        
+ 
+       
             }
             else{
                 JOptionPane.showMessageDialog(rootPane,"Hay un obstaculo");
             }
         }else if(evt.getKeyCode() == 37){
-            
-            if(x1.izquierda(logic)){
+         
+            if (x1.izquierda(logic)) {
+
                 code = 37;
                 cambio(code);
                 tab.removeAll();
                 tab.setVisible(false);
                 tab.setVisible(true);
-                mostrar(etiq,logic);
-                
+                mostrar(etiq, logic);
+                preguntas.setVisible(false);
+    
             }
             else{
                 JOptionPane.showMessageDialog(rootPane,"Hay un obstaculo");
@@ -228,13 +233,60 @@ public class Preguntas extends javax.swing.JFrame {
             }
         }
         else{
-            JOptionPane.showMessageDialog(rootPane,"Tecla invalida");
+         
+          JOptionPane.showMessageDialog(rootPane,"Tecla invalida");
         }
     }//GEN-LAST:event_formKeyPressed
 
-    private void lookActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lookActionPerformed
-
-    }//GEN-LAST:event_lookActionPerformed
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        if(V.isSelected()&& F.isSelected()){
+            JOptionPane.showMessageDialog(rootPane,"Solo debe marcar una opción");
+        }
+        else{
+        if(resp.get(ale).equals("V")){
+            if(V.isSelected() == true){
+                
+                JOptionPane.showMessageDialog(rootPane,"Correcto");
+                System.out.println(code);
+                cambio(code);
+                tab.removeAll();
+                tab.setVisible(false);
+                tab.setVisible(true);
+                mostrar(etiq, logic);
+                preguntas.setVisible(false);
+                
+            }
+            else{
+                
+                JOptionPane.showMessageDialog(rootPane,"Incorrecto");
+                preguntas.setVisible(false);
+                
+            }
+        }
+        if(resp.get(ale).equals("F")){
+            if(F.isSelected() == true){
+ 
+                JOptionPane.showMessageDialog(rootPane,"Correcto");
+                cambio(code);
+                tab.removeAll();
+                tab.setVisible(false);
+                tab.setVisible(true);
+                mostrar(etiq, logic);
+                preguntas.setVisible(false);
+                
+            }else{
+                
+                JOptionPane.showMessageDialog(rootPane,"Incorrecto");
+                preguntas.setVisible(false);
+                
+            }
+        }
+        else{
+            JOptionPane.showMessageDialog(rootPane,"Incorrecto");
+            preguntas.setVisible(false);
+        }
+        }
+    }//GEN-LAST:event_jButton1ActionPerformed
     //Allows to show the matrix
     public void show1(){
         int x =(int) (Math.random() * 5) + 0;
@@ -378,68 +430,22 @@ public class Preguntas extends javax.swing.JFrame {
     
     public void addPreg(){
         
-        preguntas();
+        addPreguntas();
         addP.setText(pregs.get(ale));
         
     
     }
-    
-    public boolean check(){
-        
-        if(look.isSelected()){
-        if(V.isSelected()&& F.isSelected()){
-            JOptionPane.showMessageDialog(rootPane,"Solo debe marcar una opción");
-            return true;
-            
-        }
 
-        else{
-        if(resp.get(ale).equals("V")){
-            if(V.isSelected() == true){
-                
-                JOptionPane.showMessageDialog(rootPane,"Correcto");
-                return true;
-            }
-            else{
-                
-                JOptionPane.showMessageDialog(rootPane,"Incorrecto");
-                return false;
-                
-            }
-        }
-        if(resp.get(ale).equals("F")){
-            if(F.isSelected() == true){
-                JOptionPane.showMessageDialog(rootPane,"Correcto");
-                preguntas.setVisible(false);
-                return true;
-                
-                
-            }else{
-                
-                JOptionPane.showMessageDialog(rootPane,"Incorrecto");
-                
-            }
-        }
-        else{
-            JOptionPane.showMessageDialog(rootPane,"Incorrecto");
-            return false;
-            
-        }
-        }
-        }
-        return false;
-           
-       
-      
-
-    }
-    
-    
-    public void preguntas(){
+    public void addPreguntas(){
         pregs.add("¿Las listas son lo mismo que un arreglo?"); pregs.add("¿Un String es lo mismo que un Char?");
         resp.add("F"); resp.add("F");
     
     }
+    
+    
+    
+    
+    
     /**
      * @param args the command line arguments
      */
@@ -480,8 +486,8 @@ public class Preguntas extends javax.swing.JFrame {
     private javax.swing.JRadioButton V;
     private javax.swing.JTextArea addP;
     private javax.swing.JPanel comodin;
+    private javax.swing.JButton jButton1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JButton look;
     private javax.swing.JPanel preguntas;
     private javax.swing.JPanel tab;
     // End of variables declaration//GEN-END:variables
