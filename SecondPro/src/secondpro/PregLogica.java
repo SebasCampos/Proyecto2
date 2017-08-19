@@ -27,14 +27,13 @@ public class PregLogica {
                     return false;
                 }
                 else{
-                
-                    if(logica[i][j+1].equals("_")){
-                        
+                    if(logica[i][j+1].equals("_")){                  
                         return true;
-
-                       
                     }
                     else if(logica[i][j+1].equals("$")){
+                        return true;
+                    }
+                    else if(logica[i][j+1].equals("1")){
                         return true;
                     }
                     else{
@@ -65,6 +64,9 @@ public class PregLogica {
                     else if(logica[i][j-1].equals("$")){
                        return true;
                     }
+                     else if(logica[i][j-1].equals("1")){
+                        return true;
+                    }
                     else{
                         return false;
                         
@@ -94,6 +96,9 @@ public class PregLogica {
                     else if(logica[i-1][j].equals("$")){
                         return true;
                     }
+                     else if(logica[i-1][j].equals("1")){
+                        return true;
+                    }
                     else{
                         return false;
                         
@@ -120,6 +125,9 @@ public class PregLogica {
                         
                     }
                     else if(logica[i+1][j].equals("$")){
+                        return true;
+                    }
+                     else if(logica[i+1][j].equals("1")){
                         return true;
                     }
                     else{

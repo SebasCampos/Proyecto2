@@ -9,7 +9,6 @@ import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
-import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
@@ -17,6 +16,7 @@ import javax.swing.SpinnerNumberModel;
 import javax.swing.SwingConstants;
 import javax.swing.Timer;
 import javax.swing.border.Border;
+import javax.swing.BorderFactory;
 
 /**
  *
@@ -42,8 +42,8 @@ public class Preguntas extends javax.swing.JFrame {
     int ale = (int)(Math.random() * 1) + 1;
     int puntos = 0;
     int code = 0;
+    int intentos = 0;
     
-    boolean paso = false;
     public Preguntas() {
         initComponents();
         SpinnerNumberModel cantP = new SpinnerNumberModel();
@@ -284,12 +284,17 @@ public class Preguntas extends javax.swing.JFrame {
 
     private void formKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_formKeyPressed
         
-        
+        Menu_Principal_Juegos l = new Menu_Principal_Juegos();
         if(evt.getKeyCode()== 39){
             if(x1.derecha(logic)){
                 code = 39;
                 if(findComo(code)== true){
                     comodin.setVisible(true);}
+                else if(meta(code)){
+                    JOptionPane.showMessageDialog(rootPane, "Has Ganado!!!!");
+                    l.setVisible(true);
+                    dispose();
+                }
                 else{
                 preguntas.setVisible(true);
                 addPreg();
@@ -297,6 +302,15 @@ public class Preguntas extends javax.swing.JFrame {
             }
             else{
                 JOptionPane.showMessageDialog(rootPane,"Hay un obstaculo");
+                if(intentos == 4){
+                    JOptionPane.showMessageDialog(rootPane,"Has perdido!!!\n"
+                            + "Demasiados moviemientos invalidos");
+                    l.setVisible(true);
+                    dispose();
+                }
+                else{
+                    intentos++;
+                }
                 
             }
         }else if(evt.getKeyCode() == 37){
@@ -314,6 +328,16 @@ public class Preguntas extends javax.swing.JFrame {
             else{
                 JOptionPane.showMessageDialog(rootPane,"Hay un obstaculo");
                 
+                if(intentos == 4){
+                    JOptionPane.showMessageDialog(rootPane,"Has perdido!!!\n"
+                            + "Demasiados moviemientos invalidos");
+                    l.setVisible(true);
+                    dispose();
+                }
+                else{
+                    intentos++;
+                }
+                
             }
         }
         else if(evt.getKeyCode()== 38){
@@ -329,6 +353,16 @@ public class Preguntas extends javax.swing.JFrame {
             }
             else{
                 JOptionPane.showMessageDialog(rootPane,"Hay un obstaculo");
+                
+                if(intentos == 4){
+                    JOptionPane.showMessageDialog(rootPane,"Has perdido!!!\n"
+                            + "Demasiados moviemientos invalidos");
+                    l.setVisible(true);
+                    dispose();
+                }
+                else{
+                    intentos++;
+                }
               
             }
         }
@@ -337,6 +371,11 @@ public class Preguntas extends javax.swing.JFrame {
                 code = 40;
                 if(findComo(code)== true){
                     comodin.setVisible(true);}
+                else if(meta(code)){
+                    JOptionPane.showMessageDialog(rootPane, "Has Ganado!!!!");
+                    l.setVisible(true);
+                    dispose();
+                }
                 else{
                 preguntas.setVisible(true);
                 addPreg();
@@ -345,6 +384,15 @@ public class Preguntas extends javax.swing.JFrame {
             }
             else{
                 JOptionPane.showMessageDialog(rootPane,"Hay un obstaculo");
+                if(intentos == 4){
+                    JOptionPane.showMessageDialog(rootPane,"Has perdido!!!\n"
+                            + "Demasiados moviemientos invalidos");
+                    l.setVisible(true);
+                    dispose();
+                }
+                else{
+                    intentos++;
+                }
                 
             }
         }
@@ -430,6 +478,18 @@ public class Preguntas extends javax.swing.JFrame {
                 count ++;
                 if(count == 60){
                     t.stop();
+                    for (int i = 0; i < 5; i++) {
+                        for (int j = 0; j < 8; j++) {
+                            if(logic[i][j].equals("$")){
+                                logic[i][j] = "_";
+                                break;
+                            }
+                        }
+                    }
+                tab.removeAll();
+                tab.setVisible(false);
+                tab.setVisible(true);
+                mostrar(etiq, logic);
                     comodin.setVisible(false);
                 }
                 else{
@@ -653,7 +713,7 @@ public class Preguntas extends javax.swing.JFrame {
 
     }
 
-  public boolean findComo(int cod){
+   public boolean findComo(int cod){
       for (int i = 0; i < 5; i++) {
           for (int j = 0; j < 8; j++) {
               if (logic[i][j].equals("u")) {
@@ -723,6 +783,48 @@ public class Preguntas extends javax.swing.JFrame {
   }
       return false;
   }
+   
+   public boolean meta(int codi){
+       for (int i = 0; i < 5; i++) {
+          for (int j = 0; j < 8; j++) {
+              if (logic[i][j].equals("u")) {
+                  if(codi ==39){
+                      //derecha
+                       if((j+1)>7){
+                    return false;
+                }
+                else{
+                     if(logic[i][j+1].equals("1")){
+                        return true;
+                    }
+                    else{
+                        return false;
+                        
+                    }
+                  }}
+                  
+                  else{
+                      //abajo
+                      if ((i + 1) > 5) {
+                      return false;
+                  } else {
+
+                      if (logic[i + 1][j].equals("1")) {
+                          return true;
+                      } else {
+                          return false;
+
+                      }
+              }
+                  }              
+          }
+      }
+  
+  }
+   return false;
+   
+   
+   }
    
    
     /**
