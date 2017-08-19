@@ -39,7 +39,8 @@ public class Preguntas extends javax.swing.JFrame {
     ArrayList<String> pregs = new ArrayList<>();
     ArrayList<String> resp = new ArrayList<>();
     PregLogica x1 = new PregLogica();
-    int ale = (int)(Math.random() * 1) + 1;
+    int ale = 0;
+    
     int puntos = 0;
     int code = 0;
     int intentos = 0;
@@ -663,9 +664,11 @@ public class Preguntas extends javax.swing.JFrame {
     }
     //Add questions to the text area
     public void addPreg(){
-        
+        int alea = (int)(Math.random() * pregs.size()) + 0;
+        System.out.println(alea);
+        ale = alea;
         addPreguntas();
-        addP.setText(pregs.get(ale));
+        addP.setText(pregs.get(alea));
         
     
     }
@@ -673,7 +676,94 @@ public class Preguntas extends javax.swing.JFrame {
     public void addPreguntas(){
         pregs.add("¿Las listas son lo mismo que un arreglo?"); pregs.add("¿Un String es lo mismo que un Char?");
         resp.add("F"); resp.add("F");
-    
+        pregs.add("¿Java es un lenguaje orientado a objetos?");
+        resp.add("T");
+        pregs.add("¿Java fue el primer lenguaje de programacion de alto nivel?");
+        resp.add("F");
+        pregs.add("¿int, char, float, string, boolean son tipos de datos?");
+        resp.add("T");
+        pregs.add("¿if, else, for y while son estructuras de control?");
+        resp.add("T");
+        pregs.add("universidad = 'UTN';\n¿Es correcta esta declaracion?");
+        resp.add("F");
+        pregs.add("¿Java fue creado por Sun Microsystems?");
+        resp.add("T");
+        pregs.add("¿Java fue creado en 1996?");
+        resp.add("F");
+        pregs.add("Una clase es un modelo que nos permite inicializar objetos\n ¿Verdadero o falso?");
+        resp.add("T");
+        pregs.add("¿La palabra Swing en Java hace referencia al cambio de valores?");
+        resp.add("F");
+        pregs.add("For, while, do/while\n ¿Se consideran bucles?");
+        resp.add("T");
+        pregs.add("¿Las clases deben llevar su nombre en miniscula?");
+        resp.add("F");
+        pregs.add("La clase Scanner se utiliza para obtener datos por medio de la consola\n¿Verdadero o Falso?");
+        resp.add("T");
+        pregs.add("String[][] matriz = new [2][2]\n¿La declaración es correcta?");
+        resp.add("F");
+        pregs.add("If/else, switch\n¿Son sentencias de salto?");
+        resp.add("T");
+        pregs.add("A<B\nSegún la sentencia anterior ¿A es mayor que B?");
+        resp.add("F");
+        pregs.add("La sintaxis de Java deriva de C y C++\n¿Verdadero o Falso?");
+        resp.add("V");
+        pregs.add("¿Los operadores boleanos hacen referencia a datos númericos?");
+        resp.add("F");
+        pregs.add("Las operaciones de lectura y escritura pertenecen a java.net\n¿Verdadero o Falso?");
+        resp.add("F");
+        pregs.add("¿NetBeans es un entorno de desarrollo libre?");
+        resp.add("T");
+        pregs.add("¿Los operadores lógicos permiten establecer relaciones entre dos valores?");
+        resp.add("T");
+        pregs.add("Java no cuenta con gran cantidad de librerias para trabajar\n¿Verdadero o Falso?");
+        resp.add("F");
+        pregs.add("¿IDE es multiplataforma?");
+        resp.add("T");
+        pregs.add("Los atributos representan un conjunto de objetos con un comportamientos\nregido por variables\n¿Verdadero o False?");
+        resp.add("F");
+        pregs.add("universidad = 'UTN';\n¿Es correcta esta declaracion?");
+        resp.add("F");
+        pregs.add("¿Java fue creado por Sun Microsystems?");
+        resp.add("T");
+        pregs.add("¿Java fue creado en 1996?");
+        resp.add("F");
+        pregs.add("¿Un char en java ocupa 8 bits?");
+        resp.add("T");
+        pregs.add("public static void()\n\t System.out.println('Esta bien escrito este metodo');\n¿Esta bien escrito el metodo?");
+        resp.add("F");
+        pregs.add("int num = 25.0\n¿Esto es correcto?");
+        resp.add("F");
+        pregs.add("int i = 0;\nwhile(i < 10){\n\tSystem.out.println('Esta bien escrito la estructura de control');\n}\n¿La estructura de control esta bien escrita?");
+        resp.add("F");
+        pregs.add("break;\n¿Se usa para detener el programa?");
+        resp.add("F");
+        pregs.add("/* */\n¿Los anteriores signos son usados para hacer un comentario largo en java y que no sea visible en la ejecucion?");
+        resp.add("T");
+        pregs.add("System.out.println('Hola');\n¿Esta bien escrito el print?");
+        resp.add("T");
+        pregs.add("public, private, protected\n¿Lo anterior son modificadores de acceso?");
+        resp.add("T");
+        pregs.add("¿Si declaro una variable 'final' puede cambiar su valor durante la ejecucion del programa?");
+        resp.add("F");
+        pregs.add("ArrayList list = new ArrayList<>();\n¿La declaracion es correcta?");
+        resp.add("T");
+        pregs.add("<,>,==,||,&&\n¿Los signos anteriores en java son estructuras de control?");
+        resp.add("F");
+        pregs.add("boolean num = true,num_1 = false;\nif((num == true) && !(num_1 == true)){\n}\n\t¿La condicion se cumple?\n");
+        resp.add("T");
+        pregs.add("String s = 'esto es un String';\n¿Es correcta esta declaracion?");
+        resp.add("T");
+        pregs.add("class Myclass extends JPanel{\n}\n¿Esta bien escrita la herencia?");
+        resp.add("T");
+        pregs.add("public class Myclass extends JPanel{\n\tpublic Myclass(){\n\t}\n}\n¿Esta bien escrito el constructor?");
+        resp.add("T");
+        pregs.add("¿Puedo usar una variable de una clase a otra clase de diferente paquete sin la declarar 'public' la variable?");
+        resp.add("F");
+        pregs.add("¿El creador del lenguaje java fue James Gosling?");
+        resp.add("T");
+        pregs.add("int num1= 25;\nint num2=50;\nSystem.out.println(!(num1 > num2));\n¿Que valor booleano retorna el print?");
+        resp.add("T");
     }
     
     public void addObsta(){
