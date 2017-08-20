@@ -12,11 +12,7 @@ import java.util.ArrayList;
  * @author Sebastian
  */
 public class PregLogica {
-    
-   
-    
-    
-    
+
     
     public boolean derecha(String[][] logica){
         Preguntas y = new Preguntas();
@@ -142,9 +138,6 @@ public class PregLogica {
         return false;
     
     }
-    
-    
-    
-    
+   
     
 }

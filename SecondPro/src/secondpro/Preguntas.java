@@ -40,7 +40,6 @@ public class Preguntas extends javax.swing.JFrame {
     ArrayList<String> resp = new ArrayList<>();
     PregLogica x1 = new PregLogica();
     int ale = 0;
-    
     int puntos = 0;
     int code = 0;
     int intentos = 0;
@@ -140,7 +139,7 @@ public class Preguntas extends javax.swing.JFrame {
                                 .addComponent(V)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(F, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 377, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 377, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(25, 25, 25))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, preguntasLayout.createSequentialGroup()
                         .addComponent(jButton1)
@@ -196,24 +195,25 @@ public class Preguntas extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, comodinLayout.createSequentialGroup()
                         .addComponent(probar)
                         .addGap(217, 217, 217))))
-            .addGroup(comodinLayout.createSequentialGroup()
-                .addGap(142, 142, 142)
-                .addComponent(num1, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(51, 51, 51)
-                .addComponent(num2, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(47, 47, 47)
-                .addComponent(num3, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, comodinLayout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(jLabel2)
                 .addGap(66, 66, 66))
             .addGroup(comodinLayout.createSequentialGroup()
-                .addGap(46, 46, 46)
-                .addComponent(iniciar)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(m_tiempo, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(48, 48, 48))
+                .addGap(142, 142, 142)
+                .addGroup(comodinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(comodinLayout.createSequentialGroup()
+                        .addComponent(iniciar)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(m_tiempo, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(48, 48, 48))
+                    .addGroup(comodinLayout.createSequentialGroup()
+                        .addComponent(num1, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(51, 51, 51)
+                        .addComponent(num2, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(47, 47, 47)
+                        .addComponent(num3, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(118, Short.MAX_VALUE))))
         );
         comodinLayout.setVerticalGroup(
             comodinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -229,10 +229,13 @@ public class Preguntas extends javax.swing.JFrame {
                 .addComponent(probar)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 15, Short.MAX_VALUE)
                 .addComponent(jLabel2)
-                .addGap(13, 13, 13)
                 .addGroup(comodinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(iniciar)
-                    .addComponent(m_tiempo, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(comodinLayout.createSequentialGroup()
+                        .addGap(13, 13, 13)
+                        .addComponent(m_tiempo, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(comodinLayout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(iniciar)))
                 .addGap(36, 36, 36))
         );
 
@@ -247,21 +250,20 @@ public class Preguntas extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(tab, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(27, 27, 27)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(comodin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(preguntas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 77, Short.MAX_VALUE)))
-                .addContainerGap())
-            .addGroup(layout.createSequentialGroup()
-                .addGap(191, 191, 191)
-                .addComponent(jLabel3)
-                .addGap(18, 18, 18)
-                .addComponent(countPoints, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addContainerGap()
+                        .addComponent(tab, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(32, 32, 32)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(preguntas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(comodin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(191, 191, 191)
+                        .addComponent(jLabel3)
+                        .addGap(18, 18, 18)
+                        .addComponent(countPoints, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(67, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -269,15 +271,17 @@ public class Preguntas extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
+                        .addComponent(tab, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 137, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel3)
+                            .addComponent(countPoints, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(24, 24, 24))
+                    .addGroup(layout.createSequentialGroup()
                         .addComponent(preguntas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(comodin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(tab, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel3)
-                    .addComponent(countPoints, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(24, 24, 24))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(comodin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
 
         pack();
@@ -404,6 +408,7 @@ public class Preguntas extends javax.swing.JFrame {
     }//GEN-LAST:event_formKeyPressed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+
         if(V.isSelected()&& F.isSelected()){
             JOptionPane.showMessageDialog(rootPane,"Solo debe marcar una opción");
         }
@@ -414,7 +419,7 @@ public class Preguntas extends javax.swing.JFrame {
                 countPoints.setText(Integer.toString(puntos));
                 countPoints.setHorizontalAlignment(SwingConstants.CENTER);
                 JOptionPane.showMessageDialog(rootPane,"Correcto");
-                System.out.println(code);
+                eliminar(logic);
                 cambio(code);
                 tab.removeAll();
                 tab.setVisible(false);
@@ -444,6 +449,7 @@ public class Preguntas extends javax.swing.JFrame {
                 countPoints.setText(Integer.toString(puntos));
                 countPoints.setHorizontalAlignment(SwingConstants.CENTER);
                 JOptionPane.showMessageDialog(rootPane,"Correcto");
+                eliminar(logic);
                 cambio(code);
                 tab.removeAll();
                 tab.setVisible(false);
@@ -557,8 +563,6 @@ public class Preguntas extends javax.swing.JFrame {
         int  x = 75;
         int  y = 75;
         Border border = BorderFactory.createLineBorder(Color.black, 1);
-        
-        
         for (int i = 0; i < 5; i++) {
             for (int j = 0; j < 8; j++) {
 
@@ -611,8 +615,7 @@ public class Preguntas extends javax.swing.JFrame {
         }
         
         tab.add(etiquetas[4][7]);
-//        tab.setVisible(false);
-//        tab.setVisible(true);
+
     }
     
     //Makes the change in the logic matrix for the new positions
@@ -664,7 +667,8 @@ public class Preguntas extends javax.swing.JFrame {
     }
     //Add questions to the text area
     public void addPreg(){
-        int alea = (int)(Math.random() * pregs.size()) + 0;
+//        int alea = (int)(Math.random() * pregs.size()) + 0;
+        int alea = 0; //quitar
         System.out.println(alea);
         ale = alea;
         addPreguntas();
@@ -672,7 +676,7 @@ public class Preguntas extends javax.swing.JFrame {
         
     
     }
-    //Add the questions to a list
+    //Add the questions and the answers to a list
     public void addPreguntas(){
         pregs.add("¿Las listas son lo mismo que un arreglo?"); pregs.add("¿Un String es lo mismo que un Char?");
         resp.add("F"); resp.add("F");
@@ -915,6 +919,24 @@ public class Preguntas extends javax.swing.JFrame {
    
    
    }
+   //It checks if there is a wall and changes it for a blank space
+   public void eliminar(String[][]logica){
+        JOptionPane.showMessageDialog(rootPane,"A continuación debe digitar la posición del obstaculo que desea eliminar");
+       while(true){
+           String fila = JOptionPane.showInputDialog(null, "Digite el número de fila: ");
+           String columna = JOptionPane.showInputDialog(null, "Digite el número de columna: ");
+        if(logica[Integer.parseInt(fila)-1][Integer.parseInt(columna)-1].equals("*")){
+            logica[Integer.parseInt(fila)-1][Integer.parseInt(columna)-1] = "_";
+            break;
+        }
+        else{
+            
+            JOptionPane.showMessageDialog(rootPane,"En esa posición no hay obstaculos!!\n"
+                    + "Digite una posición valida.");
+        }
+       
+       }
+    }
    
    
     /**
