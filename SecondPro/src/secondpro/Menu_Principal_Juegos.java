@@ -26,18 +26,6 @@ public class Menu_Principal_Juegos extends javax.swing.JFrame {
         this.setResizable(false);
         this.setVisible(true);
         this.setTitle("Juegos");
-        this.setAlwaysOnTop(true);//siempre al frente 
-         //nueva instancia de jBlocked pasando como parametros e este JFrame
-
-        setIconImage(new ImageIcon(getClass().getResource("/imagenes/icono.jpg")).getImage());//imagen de icono
-        
-        ((JPanel) getContentPane()).setOpaque(false);
-        ImageIcon uno = new ImageIcon(this.getClass().getResource("/imagenes/fondo.jpg"));
-        JLabel fondo = new JLabel();
-        fondo.setIcon(uno);
-        getLayeredPane().add(fondo, JLayeredPane.FRAME_CONTENT_LAYER);
-        fondo.setBounds(0, 0, uno.getIconWidth(), uno.getIconHeight());
-        
         this.dispose();// es para cerrar la ventana de atras cuando hay mas de una 
     }
 
@@ -145,9 +133,8 @@ public class Menu_Principal_Juegos extends javax.swing.JFrame {
     }//GEN-LAST:event_btnSalirActionPerformed
 
     private void nataActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nataActionPerformed
-        MenuNata x = new MenuNata();
-        x.setVisible(true);
-        dispose();
+        Juego_Picina piscina = new Juego_Picina();
+        piscina.setVisible(true);
     }//GEN-LAST:event_nataActionPerformed
 
     private void preguActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_preguActionPerformed
