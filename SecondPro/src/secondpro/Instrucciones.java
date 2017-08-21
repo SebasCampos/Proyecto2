@@ -25,7 +25,14 @@ public class Instrucciones extends javax.swing.JFrame {
                 + "y aparecera un obstaculo en el mapa.\n\n"
                 + "* La partida se considera perdida luego de que el usuario realice 4 movimientos\n"
                 + "invalidos(intentar salirse del tablero o chocar contra un obstaculo)\n"
-                + " o en caso de que ya no pueda moverse. ";
+                + " o en caso de que ya no pueda moverse.\n\n"
+                + "* Cuando se le solicita la fila el orden de los números es de arriba hacia abajo, ejemplo:\n"
+                + "1.\n"
+                + "2.\n"
+                + "3.\n"
+                + "4.\n"
+                + "5.\n Debe de escoger entre esos cinco números y luego el número de celda \nen el que se encuentra"
+                + "el obstaculo. ";
         area.setText(agregar);
     }
 

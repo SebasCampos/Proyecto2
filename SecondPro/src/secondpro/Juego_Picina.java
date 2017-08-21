@@ -29,7 +29,7 @@ public class Juego_Picina extends javax.swing.JFrame {
     /**
      * Creates new form Juego_Picina
      */
-    int x = 1500, y = 700;
+    int x = 1500, y = 730;
     int limite = 700;
     int contadorCarreras = 0;
     int cantidadNadadores = 0;
@@ -377,7 +377,7 @@ public class Juego_Picina extends javax.swing.JFrame {
                                 .addComponent(btnReportes)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(btnBorrarReportes)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 129, Short.MAX_VALUE)))
                 .addComponent(lbPicina, javax.swing.GroupLayout.PREFERRED_SIZE, 704, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(linea5))
@@ -397,7 +397,7 @@ public class Juego_Picina extends javax.swing.JFrame {
                 .addGroup(layout.createSequentialGroup()
                     .addContainerGap()
                     .addComponent(lbnadador1)
-                    .addContainerGap(1158, Short.MAX_VALUE)))
+                    .addContainerGap(1206, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -509,7 +509,7 @@ public class Juego_Picina extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(lbPicina, javax.swing.GroupLayout.PREFERRED_SIZE, 752, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 25, Short.MAX_VALUE)))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(linea2)
                     .addComponent(linea3)
@@ -521,7 +521,7 @@ public class Juego_Picina extends javax.swing.JFrame {
                 .addGroup(layout.createSequentialGroup()
                     .addGap(75, 75, 75)
                     .addComponent(lbnadador1)
-                    .addContainerGap(717, Short.MAX_VALUE)))
+                    .addContainerGap(730, Short.MAX_VALUE)))
         );
 
         pack();
@@ -1571,6 +1571,7 @@ public class Juego_Picina extends javax.swing.JFrame {
 
         void stop1() {
             t.stop();// es para detener el cronometro desde otra ventan pero no sirve todavia
+            
         }
 
         void actualizar() {

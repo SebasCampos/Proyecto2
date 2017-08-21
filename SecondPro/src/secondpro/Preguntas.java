@@ -58,6 +58,7 @@ public class Preguntas extends javax.swing.JFrame {
         num1.setModel(cantP);
         num2.setModel(cantP1);
         num3.setModel(cantP2);
+       
         show1();
         
         preguntas.setVisible(false);
@@ -92,6 +93,7 @@ public class Preguntas extends javax.swing.JFrame {
         m_tiempo = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         countPoints = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         addKeyListener(new java.awt.event.KeyAdapter() {
@@ -245,25 +247,34 @@ public class Preguntas extends javax.swing.JFrame {
         countPoints.setBackground(new java.awt.Color(255, 255, 255));
         countPoints.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
+        jLabel4.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(tab, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 89, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(preguntas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(20, 20, 20))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(comodin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap())))
+            .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(tab, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(32, 32, 32)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(preguntas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(comodin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(71, 71, 71)
+                        .addComponent(jLabel4))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(191, 191, 191)
+                        .addGap(158, 158, 158)
                         .addComponent(jLabel3)
-                        .addGap(18, 18, 18)
+                        .addGap(39, 39, 39)
                         .addComponent(countPoints, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(67, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -272,21 +283,22 @@ public class Preguntas extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(tab, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 137, Short.MAX_VALUE)
+                        .addGap(28, 28, 28)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel3)
                             .addComponent(countPoints, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(24, 24, 24))
+                        .addGap(453, 453, 453)
+                        .addComponent(jLabel4))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(preguntas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(comodin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addComponent(comodin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    //Allows the key move and calls the other methods
     private void formKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_formKeyPressed
         
         Menu_Principal_Juegos l = new Menu_Principal_Juegos();
@@ -307,7 +319,7 @@ public class Preguntas extends javax.swing.JFrame {
             }
             else{
                 JOptionPane.showMessageDialog(rootPane,"Hay un obstaculo");
-                if(intentos == 4){
+                if(intentos == 3){
                     JOptionPane.showMessageDialog(rootPane,"Has perdido!!!\n"
                             + "Demasiados moviemientos invalidos");
                     l.setVisible(true);
@@ -333,7 +345,7 @@ public class Preguntas extends javax.swing.JFrame {
             else{
                 JOptionPane.showMessageDialog(rootPane,"Hay un obstaculo");
                 
-                if(intentos == 4){
+                if(intentos == 3){
                     JOptionPane.showMessageDialog(rootPane,"Has perdido!!!\n"
                             + "Demasiados moviemientos invalidos");
                     l.setVisible(true);
@@ -359,7 +371,7 @@ public class Preguntas extends javax.swing.JFrame {
             else{
                 JOptionPane.showMessageDialog(rootPane,"Hay un obstaculo");
                 
-                if(intentos == 4){
+                if(intentos == 3){
                     JOptionPane.showMessageDialog(rootPane,"Has perdido!!!\n"
                             + "Demasiados moviemientos invalidos");
                     l.setVisible(true);
@@ -389,7 +401,7 @@ public class Preguntas extends javax.swing.JFrame {
             }
             else{
                 JOptionPane.showMessageDialog(rootPane,"Hay un obstaculo");
-                if(intentos == 4){
+                if(intentos == 3){
                     JOptionPane.showMessageDialog(rootPane,"Has perdido!!!\n"
                             + "Demasiados moviemientos invalidos");
                     l.setVisible(true);
@@ -477,7 +489,7 @@ public class Preguntas extends javax.swing.JFrame {
         }
         }
     }//GEN-LAST:event_jButton1ActionPerformed
-
+    //Starts the timer for the wildcard
     private void iniciarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_iniciarActionPerformed
         t = new Timer(1000, new ActionListener() {
             @Override
@@ -513,7 +525,7 @@ public class Preguntas extends javax.swing.JFrame {
         System.out.println(codigo);
         iniciar.setEnabled(false);
     }//GEN-LAST:event_iniciarActionPerformed
-
+    
     private void probarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_probarActionPerformed
         if(corro() == 3){
             // cambiar
@@ -525,7 +537,8 @@ public class Preguntas extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(rootPane,"Incorrecto!!!");
         }
     }//GEN-LAST:event_probarActionPerformed
-    //Allows to show the matrix
+    
+//Creates the logic matrix for the game
     public void show1(){
         int x =(int) (Math.random() * 5) + 0;
         int y =(int) (Math.random() * 8) + 0;
@@ -541,13 +554,12 @@ public class Preguntas extends javax.swing.JFrame {
         while(conta < 10){
             int alex =(int) (Math.random() * 5) + 0;
             int aley =(int) (Math.random() * 8) + 0;
-            if(alex != 0 || alex != 1){
-                if(aley != 1 || aley != 0){
+            if(alex != 0 && aley != 0 || alex != 1 && aley != 0){
             if(logic[alex][aley].equals("_")){
                 logic[alex][aley]= "*";
                 conta++;
             }}
-            }
+            
             
         }
         logic[0][0] = "u";
@@ -665,11 +677,11 @@ public class Preguntas extends javax.swing.JFrame {
     
     
     }
-    //Add questions to the text area
+    //Add questions to the text area with a random number
     public void addPreg(){
-//        int alea = (int)(Math.random() * pregs.size()) + 0;
-        int alea = 0; //quitar
-        System.out.println(alea);
+        int alea = (int)(Math.random() * pregs.size()) + 0;// se comenta para que salga la misma pregunta
+        //int alea = 0; //activar para que salga siempre la misma pregunta
+        System.out.println(alea);// quitar
         ale = alea;
         addPreguntas();
         addP.setText(pregs.get(alea));
@@ -769,7 +781,7 @@ public class Preguntas extends javax.swing.JFrame {
         pregs.add("int num1= 25;\nint num2=50;\nSystem.out.println(!(num1 > num2));\n¿Que valor booleano retorna el print?");
         resp.add("T");
     }
-    
+    //Adds new obstacles to the game
     public void addObsta(){
         while(true){
         int x = (int)(Math.random() * 5) + 0;
@@ -782,14 +794,12 @@ public class Preguntas extends javax.swing.JFrame {
         
         }
     }
-    
+    //This method compares the answer of the wildcard with the secret code
    public int corro(){
         nume1 = (int) num1.getValue();
         nume2 = (int) num2.getValue();
         nume3 = (int) num3.getValue();
-        System.out.println(nume1);
-        System.out.println(nume2);
-        System.out.println(nume3);
+        
         int cont = 0;
         
         if (nume1 == codigo.get(0)) {
@@ -802,11 +812,12 @@ public class Preguntas extends javax.swing.JFrame {
         }
                    
         
-        System.out.println(cont);
+        System.out.println(cont);// quitar para el codigo secreto
         return cont;
 
     }
-
+   
+   //Checks the logic matrix and find the comodin position 
    public boolean findComo(int cod){
       for (int i = 0; i < 5; i++) {
           for (int j = 0; j < 8; j++) {
@@ -877,7 +888,7 @@ public class Preguntas extends javax.swing.JFrame {
   }
       return false;
   }
-   
+   //Checks if the user is already at the final
    public boolean meta(int codi){
        for (int i = 0; i < 5; i++) {
           for (int j = 0; j < 8; j++) {
@@ -924,7 +935,7 @@ public class Preguntas extends javax.swing.JFrame {
         JOptionPane.showMessageDialog(rootPane,"A continuación debe digitar la posición del obstaculo que desea eliminar");
        while(true){
            String fila = JOptionPane.showInputDialog(null, "Digite el número de fila: ");
-           String columna = JOptionPane.showInputDialog(null, "Digite el número de columna: ");
+           String columna = JOptionPane.showInputDialog(null, "Digite el número de celda: ");
         if(logica[Integer.parseInt(fila)-1][Integer.parseInt(columna)-1].equals("*")){
             logica[Integer.parseInt(fila)-1][Integer.parseInt(columna)-1] = "_";
             break;
@@ -937,8 +948,7 @@ public class Preguntas extends javax.swing.JFrame {
        
        }
     }
-   
-   
+ 
     /**
      * @param args the command line arguments
      */
@@ -985,6 +995,7 @@ public class Preguntas extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel m_tiempo;
     private javax.swing.JSpinner num1;

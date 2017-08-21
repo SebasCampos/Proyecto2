@@ -13,7 +13,7 @@ import java.util.ArrayList;
  */
 public class PregLogica {
 
-    
+    //It checks the right side of the user in the logic matrix and returns true if the move can be do it
     public boolean derecha(String[][] logica){
         Preguntas y = new Preguntas();
         for (int i = 0; i < 5; i++) {
@@ -44,6 +44,7 @@ public class PregLogica {
         return false;
     
     }
+    //It checks the left side of the user in the logic matrix and returns true if the move can be do it
     public boolean izquierda(String[][] logica){
         for (int i = 0; i < 5; i++) {
             for (int j = 0; j < 8; j++) {
@@ -75,6 +76,7 @@ public class PregLogica {
         return false;
     
     }
+    //It checks the up side of the user in the logic matrix and returns true if the move can be do it
     public boolean arriba(String[][] logica){
         for (int i = 0; i < 5; i++) {
             for (int j = 0; j < 8; j++) {
@@ -107,6 +109,7 @@ public class PregLogica {
         return false;
     
     }
+    //It checks down the user in the logic matrix and returns true if the move can be do it
     public boolean abajo(String[][] logica){
         for (int i = 0; i < 5; i++) {
             for (int j = 0; j < 8; j++) {

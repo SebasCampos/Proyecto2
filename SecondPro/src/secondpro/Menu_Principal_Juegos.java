@@ -135,6 +135,7 @@ public class Menu_Principal_Juegos extends javax.swing.JFrame {
     private void nataActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nataActionPerformed
         Juego_Picina piscina = new Juego_Picina();
         piscina.setVisible(true);
+        
     }//GEN-LAST:event_nataActionPerformed
 
     private void preguActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_preguActionPerformed
