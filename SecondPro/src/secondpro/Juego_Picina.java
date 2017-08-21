@@ -598,7 +598,7 @@ public class Juego_Picina extends javax.swing.JFrame {
                         }
                     }
 
-                    tiempo.start();//inicia el cronometro
+                    tiempo.start();//Star el cronometro
                     tiempo.setVisible(true);
                 }
 
@@ -711,28 +711,28 @@ public class Juego_Picina extends javax.swing.JFrame {
                 for (int t = 0; t < participantes.size(); t++) {//comprueba si la lista tiene los nadadores activos para obtener la velocidad
                     if (participantes.get(t).contains("Nadador1")) {
                         valor1 = inicioPrueba.ritmo1;//captura el numero que genero el random
-                        System.out.println("NA 1: "  + inicioPrueba.ritmo1 + " : " + valor1);
                         numeroMenor.add(valor1);//agrega a la lista para ver cual es mayor
+                        //System.out.println("NA 1: "  + inicioPrueba.ritmo1 + " : " + valor1);
                     }
                     if (participantes.get(t).contains("Nadador2")) {
                         valor2 = inicioPrueba2.ritmo2;//captura el numero que genero el random
-                        System.out.println("NA 2: "  + inicioPrueba2.ritmo2 + " : " + valor2);
                         numeroMenor.add(valor2);//agrega a la lista para ver cual es mayor
+                        //System.out.println("NA 2: "  + inicioPrueba2.ritmo2 + " : " + valor2);
                     }
                     if (participantes.get(t).contains("Nadador3")) {
                         valor3 = inicioPrueba3.ritmo3;//captura el numero que genero el random
-                        System.out.println("NA 3: "  + inicioPrueba3.ritmo3 + " : " + valor3);
                         numeroMenor.add(valor3);//agrega a la lista para ver cual es mayor
+                        //System.out.println("NA 3: "  + inicioPrueba3.ritmo3 + " : " + valor3);
                     }
                     if (participantes.get(t).contains("Nadador4")) {
                         valor4 = inicioPrueba4.ritmo4;//captura el numero que genero el random
-                        System.out.println("NA 4: "  + inicioPrueba4.ritmo4 + " : " + valor4);
                         numeroMenor.add(valor4);//agrega a la lista para ver cual es mayor
+                        //System.out.println("NA 4: "  + inicioPrueba4.ritmo4 + " : " + valor4);
                     }
                     if (participantes.get(t).contains("Nadador5")) {
                         valor5 = inicioPrueba5.ritmo5;//captura el numero que genero el random
-                        System.out.println("NA 5: "  + inicioPrueba5.ritmo5 + " : " + valor5);
                         numeroMenor.add(valor5);//agrega a la lista para ver cual es mayor
+                        //System.out.println("NA 5: "  + inicioPrueba5.ritmo5 + " : " + valor5);
                     }
                 }
                 Collections.sort(numeroMenor);
@@ -747,63 +747,63 @@ public class Juego_Picina extends javax.swing.JFrame {
                         
                         if (numeroMenor.get(0).equals(valor1)) {
                             contmayor = contmayor + 1;
-                            System.out.println("na1 " + contmayor);
+                            //System.out.println("na1 " + contmayor);
                             break;
 
                         }
                         if (numeroMenor.get(0).equals(valor2)) {
                             contMayor2 = contMayor2 + 1;
-                            System.out.println("na2 " + contMayor2);
+                            //System.out.println("na2 " + contMayor2);
                             break;
 
                         } else if (numeroMenor.get(0).equals(valor3)) {
                             contMayor3 = contMayor3 + 1;
-                            System.out.println("na3 " + contMayor3);
+                            //System.out.println("na3 " + contMayor3);
                             break;
 
                         } else if (numeroMenor.get(0).equals(valor4)) {
                             contMayor4 = contMayor4 + 1;
-                            System.out.println("na4 " + contMayor4);
+                            //System.out.println("na4 " + contMayor4);
                             break;
 
                         } else if (numeroMenor.get(0).equals(valor5)) {
                             contMayor5 = contMayor5 + 1;
-                            System.out.println("na5 " + contMayor5);
+                            //System.out.println("na5 " + contMayor5);
                             break;
                         }
                     }
                 }
                         
                 Collections.sort(numeroMenor, Collections.reverseOrder());//ORDENA LA LISTA EN FORMA DECENDENTE
-                System.out.println(numeroMenor);
+                //System.out.println(numeroMenor);
                 
                 for (int q = 0; q < numeroMenor.size(); q++) {//validad cual nadador tiene el numero que esta 
                     if (!numeroMenor.isEmpty()) {             //en la posicion 0 de la lista para sumarle 1 al contador para cual a perdirdo mas
                         
                         if (numeroMenor.get(0).equals(valor1)) {
                             contMenor = contMenor + 1;
-                            System.out.println("na1 PER " + contMenor);
+                            //System.out.println("na1 PER " + contMenor);
                             break;
 
                         }
                         if (numeroMenor.get(0).equals(valor2)) {
                             contMenor2 = contMenor2 + 1;
-                            System.out.println("na2 PER " + contMenor2);
+                            //System.out.println("na2 PER " + contMenor2);
                             break;
 
                         } else if (numeroMenor.get(0).equals(valor3)) {
                             contMenor3 = contMenor3 + 1;
-                            System.out.println("na3 PER " + contMenor3);
+                            //System.out.println("na3 PER " + contMenor3);
                             break;
 
                         } else if (numeroMenor.get(0).equals(valor4)) {
                             contMenor4 = contMenor4 + 1;
-                            System.out.println("na4 PER " + contMenor4);
+                            //System.out.println("na4 PER " + contMenor4);
                             break;
 
                         } else if (numeroMenor.get(0).equals(valor5)) {
                             contMenor5 = contMenor5 + 1;
-                            System.out.println("na5 PER " + contMenor5);
+                            //System.out.println("na5 PER " + contMenor5);
                             break;
                         }
                     }
@@ -813,7 +813,7 @@ public class Juego_Picina extends javax.swing.JFrame {
                     if (numeroMenor.get(0) != 0 && numeroMenor.get(1) != 0) {
                         if (numeroMenor.get(0) == numeroMenor.get(1)) {
 
-                            System.err.println("Empate entro");
+                            //System.err.println("Empate entro");
 
                             Random numeroale1 = new Random();
                             Random numeroale2 = new Random();
@@ -1072,7 +1072,7 @@ public class Juego_Picina extends javax.swing.JFrame {
             }
         }
         numeroMenor.clear();// boora la lista es por seguridad
-        System.out.print(numeroMenor);
+        //System.out.print(numeroMenor);
 
     }//GEN-LAST:event_btnReportesActionPerformed
 
@@ -1231,7 +1231,7 @@ public class Juego_Picina extends javax.swing.JFrame {
 
                 }
             }
-            System.out.println("participante: " + "nadador 1 la velocidad es de: " + ritmo1);
+            //System.out.println("participante: " + "nadador 1 la velocidad es de: " + ritmo1);
             limite1 = 700;
         }
         public static int ritmo1;
@@ -1268,7 +1268,7 @@ public class Juego_Picina extends javax.swing.JFrame {
 
                 }
             }
-            System.out.println("participante: " + "nadador 2 la velocidad es de: " + ritmo2);
+            //System.out.println("participante: " + "nadador 2 la velocidad es de: " + ritmo2);
             limite2 = 700;
         }
         public static int ritmo2;
@@ -1305,7 +1305,7 @@ public class Juego_Picina extends javax.swing.JFrame {
 
                 }
             }
-            System.out.println("participante: " + "nadador 3 la velocidad es de: " + ritmo3);
+            //System.out.println("participante: " + "nadador 3 la velocidad es de: " + ritmo3);
             limite3 = 700;
         }
         public static int ritmo3;
@@ -1342,7 +1342,7 @@ public class Juego_Picina extends javax.swing.JFrame {
 
                 }
             }
-            System.out.println("participante: " + "nadador 4 la velocidad es de: " + ritmo4);
+            //System.out.println("participante: " + "nadador 4 la velocidad es de: " + ritmo4);
             limite4 = 700;;
         }
         public static int ritmo4;
@@ -1379,7 +1379,7 @@ public class Juego_Picina extends javax.swing.JFrame {
 
                 }
             }
-            System.out.println("participante: " + "nadador 5 la velocidad es de: " + ritmo5);
+            //System.out.println("participante: " + "nadador 5 la velocidad es de: " + ritmo5);
             limite5 = 700;
         }
         public static int ritmo5;
