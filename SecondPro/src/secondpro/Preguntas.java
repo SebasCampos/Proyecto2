@@ -425,7 +425,8 @@ public class Preguntas extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(rootPane,"Solo debe marcar una opción");
         }
         else{
-        if(resp.get(ale).equals("V")){
+            
+        if(resp.get(ale).equals("T")){
             if(V.isSelected() == true){
                 puntos++;
                 countPoints.setText(Integer.toString(puntos));
@@ -681,10 +682,13 @@ public class Preguntas extends javax.swing.JFrame {
     public void addPreg(){
         int alea = (int)(Math.random() * pregs.size()) + 0;// se comenta para que salga la misma pregunta
         //int alea = 0; //activar para que salga siempre la misma pregunta
-        System.out.println(alea);// quitar
+        
         ale = alea;
+        
         addPreguntas();
         addP.setText(pregs.get(alea));
+//        System.out.println(pregs.get(ale));
+//        System.out.println(resp.get(ale));
         
     
     }
@@ -723,7 +727,7 @@ public class Preguntas extends javax.swing.JFrame {
         pregs.add("A<B\nSegún la sentencia anterior ¿A es mayor que B?");
         resp.add("F");
         pregs.add("La sintaxis de Java deriva de C y C++\n¿Verdadero o Falso?");
-        resp.add("V");
+        resp.add("T");
         pregs.add("¿Los operadores boleanos hacen referencia a datos númericos?");
         resp.add("F");
         pregs.add("Las operaciones de lectura y escritura pertenecen a java.net\n¿Verdadero o Falso?");
