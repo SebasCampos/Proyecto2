@@ -272,6 +272,11 @@ public class Juego_Picina extends javax.swing.JFrame {
         });
 
         btnRegresar.setText("REGRESAR");
+        btnRegresar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRegresarActionPerformed(evt);
+            }
+        });
 
         jLabel17.setText("Gano Empate:");
 
@@ -1111,6 +1116,12 @@ public class Juego_Picina extends javax.swing.JFrame {
         txtEjecucion_juego.setText(null);
         txtEmpates.setText(null);
     }//GEN-LAST:event_btnBorrarReportesActionPerformed
+
+    private void btnRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarActionPerformed
+        Menu_Principal_Juegos regresa= new Menu_Principal_Juegos();
+        regresa.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_btnRegresarActionPerformed
     
     /**
      * @param args the command line arguments
