@@ -1,0 +1,101 @@
+Documentación Externa Segundo Proyecto
+
+
+Kendall 
+Sebastián Campos Salas
+Agosto 2017.
+Universidad Técnica Nacional.
+Carrera Ingeniería del Software.
+Programación I.
+
+
+
+
+
+
+
+
+
+
+
+
+
+JUEGO PREGUNTAS
+
+Preguntas Class
+
+Show1(): This method is the most important for the game because is in charge of create the logic matrix with the obstacles and the random wildcard. Basically it use a For and a While to create the matrix with the necessary items.
+
+Mostrar(): Well this method is the one who creates and shows to the user the graphic matrix, it works with the logic matrix and evaluates the data inside of it, then mostrar() decides wich image is correct for the matrix and creates a label, and add the labels to the panel.
+
+Cambio(): This method changes the position of the user in the logic matrix, but before this all the conditions must be completed. The method looks for the position of the user in the logic matrix and makes a change between the user and the next position, after this we call mostrar() for showing the new data in the graphic matrix.
+
+addPreg(): This method is very simple, it generates a random number and after that takes a question from the questions list based in the random number, and writes the question on a panel for showing it to the user.
+
+addPreguntas(): Well this method contains all the questions with their answers and it add them to their lists.
+
+addObsta(): This method is called when the user fails the question, it generates two random numbers(x , y) and check in the logic matrix if the position is available to put a new obstacle, and the method adds the new obstacle.
+
+Corro(): It checks if the answer to the wildcard is correct, and it returns the number of the correct guesses to be check in other method.
+
+findComo(): This method is used to check if the new position that the user wants to move is the wildcard, and if the wildcard is that position return true.
+
+Meta(): As findComo() this method checks the position in the logic matrix and if the position has the sign for the finish, the game ends.
+
+Eliminar(): This method ask for the position of the obstacle that the user wants to delete, if in the position obtained the logic matrix has a obstacle, the method change it for a blank space and then the new logic matrix is show by mostrar(), and if there’s no an obstacle, the method continues asking for new positions until the user gives one with a obstacle.
+
+PregLogica Class
+
+Derecha(): This method checks the right position of the user in the logic matrix, and if there’s a blank space or a wildcard it returns true.
+
+Izquierda(): This method checks the left position of the user in the logic matrix, and if there’s a blank space or a wildcard it returns true.
+
+Arriba(): This method checks the  position over the user in the logic matrix, and if there’s a blank space or a wildcard it returns true.
+
+Abajo(): This method checks the  position below the user in the logic matrix, and if there’s a blank space or a wildcard it returns true.
+
+
+
+
+
+
+
+JUEGO NATACION
+
+Public Juego_Picina
+
+The window settings are loaded and each swimmers are initialized with their respective coordinates and their image, also the lines are that separate the lanes of each swimmer and finally initializes the pool with its respective dimensions and is added To the window.
+The start button
+
+Capture the number of swimmers and the names of the chosen ones so that they go swimming.
+Check that the number of swimmers is not 1 or 0 because it shows them an error message. The amount must be greater than 1 and less than or equal to 5.
+Then check the number of swimmers that are in the options and if they are the same enter and verify which of the swimmers were selected to swim and initializes the timer. It also extracts the speed with which each swimmer is going to swim and the one that is greater to the swimmer will be given a point just as the swimmer who has the slowest speed will be increased in one to see how many times he loses and if there are draws It verifies which have the same speed to later make a raffle with random and the one that is greater obtains the point.
+
+The reset button
+Place swimmers in their starting positions. It deletes the contents of the lists that are being used in the process. Uncheck the names of the chosen swimmers. Update the timer at 00: 00: 00: 00. Deletes the contents of the variables that contain the velocities of each swimmer. Returns the limit and truth variables of each thread to 0 to equal sum and the sum 2 of the timer.
+
+The report button
+Run all requested reports, from the swimmer who won the most and who lost more, also each time a swimmer wins and when there is a tie says the amount and the name of the winner.
+In this button is where is performed the logical part of which swimmer wins more and which lost more.
+
+The Delete Reports button
+This button is the one that will be in charge to erase everything that is in the spaces of the reports just as all the counters start from 0.
+
+Home Test
+It is the number 1 thread which gives movement to the first swimmer in this part is passed through parameters to the image number 1 where to place and to where it has to stop and in this class is where the speed is to be generated of The swimmer 1.
+
+Home Test 2
+It is the number 2 thread which gives movement to the second swimmer in this part is passed through parameters to the image number 2 where to place and to where it has to stop and in this class is where the speed is to be generated of The swimmer 2.
+
+Home Test 3
+It is the number 3 thread which gives movement to the third swimmer in this part is passed through parameters to the image number 3 where to place and to where it has to stop and in this class is where the speed is to be generated of The swimmer 3.
+
+Home Test 4
+It is the number 4 thread which gives movement to the fourth swimmer in this part is passed through parameters to the image number 4 where to place and to where it has to stop and in this class is where the speed is to be generated of The swimmer 4.
+
+Home Test 5
+It is the number 5 thread which gives movement to the fifth swimmer in this part is passed through parameters to the image number 5 where to place and to where it has to stop and in this class is where the speed is to be generated of The swimmer 5.
+
+Class Timer
+It is a window which will contain the timer that will take the duration of the race until the last swimmer arrives.
+Where is the variable t.start () is where the timer starts to run and is increased to give the minutes, seconds and hundredths of a second, the variable that says sum is going to add 700 every time a thread reaches the limit where you will indicate and sum 2 is the one that contains the amount of threads that were activated is in order to indicate to the stopwatch where it has to stop. Example if sum 2 is 5 then the timer knows that there are 5 active wires and as such the sum must be 3500 when this is equal to this amount the stopwatch stops.
